@@ -1,31 +1,51 @@
 {
-  "hash": "ce927d73",
+  "hash": "da0b48ea",
   "configHash": "f969086c",
-  "lockfileHash": "134079f4",
-  "browserHash": "dc24d7d9",
+  "lockfileHash": "f1cf88a3",
+  "browserHash": "1b17c460",
   "optimized": {
+    "react-bootstrap": {
+      "src": "../../node_modules/react-bootstrap/esm/index.js",
+      "file": "react-bootstrap.js",
+      "fileHash": "53250657",
+      "needsInterop": false
+    },
+    "react-bootstrap/Accordion": {
+      "src": "../../node_modules/react-bootstrap/esm/Accordion.js",
+      "file": "react-bootstrap_Accordion.js",
+      "fileHash": "f3b3905c",
+      "needsInterop": false
+    },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "052e44f1",
+      "fileHash": "4989e8ac",
       "needsInterop": true
     },
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "a744ef70",
+      "fileHash": "2efdc112",
       "needsInterop": true
     },
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "d6934c9b",
+      "fileHash": "88bdbbfc",
       "needsInterop": true
     }
   },
   "chunks": {
-    "react-FLDBkK74": {
-      "file": "react-FLDBkK74.js",
+    "Accordion-BI_fV6K-": {
+      "file": "Accordion-BI_fV6K-.js",
+      "isDynamicEntry": false
+    },
+    "react-BQupsjBO": {
+      "file": "react-BQupsjBO.js",
+      "isDynamicEntry": false
+    },
+    "react-dom-BacuyvIl": {
+      "file": "react-dom-BacuyvIl.js",
       "isDynamicEntry": false
     }
   }
