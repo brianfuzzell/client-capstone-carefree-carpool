@@ -141,6 +141,130 @@
         "userId": 6
     }
   ],
-  "shifts": [],
-  "riderShifts": []
+  "shifts": [
+    {
+      "id": 1,
+      "date": "2026-04-20",
+      "morning": true,
+      "afternoon": false,
+      "driverId": 1
+    },
+    {
+      "id": 2,
+      "date": "2026-04-20",
+      "morning": false,
+      "afternoon": true,
+      "driverId": 3
+    },
+    {
+      "id": 3,
+      "date": "2026-04-21",
+      "morning": true,
+      "afternoon": false,
+      "driverId": 6
+    },
+    {
+      "id": 4,
+      "date": "2026-04-22",
+      "morning": false,
+      "afternoon": true,
+      "driverId": 8
+    },
+    {
+      "id": 5,
+      "date": "2026-04-23",
+      "morning": true,
+      "afternoon": false,
+      "driverId": 4
+    },
+    {
+      "id": 6,
+      "date": "2026-04-24",
+      "morning": true,
+      "afternoon": false,
+      "driverId": 10
+    }
+  ],
+  "riderShifts": [
+    {
+      "id": 1,
+      "riderId": 1,
+      "shiftId": 1
+    },
+    {
+      "id": 2,
+      "riderId": 2,
+      "shiftId": 1
+    },
+    {
+      "id": 3,
+      "riderId": 5,
+      "shiftId": 1
+    },
+    {
+      "id": 4,
+      "riderId": 3,
+      "shiftId": 2
+    },
+    {
+      "id": 5,
+      "riderId": 4,
+      "shiftId": 2
+    },
+    {
+      "id": 6,
+      "riderId": 7,
+      "shiftId": 2
+    },
+    {
+      "id": 7,
+      "riderId": 6,
+      "shiftId": 3
+    },
+    {
+      "id": 8,
+      "riderId": 8,
+      "shiftId": 3
+    },
+    {
+      "id": 9,
+      "riderId": 7,
+      "shiftId": 4
+    },
+    {
+      "id": 10,
+      "riderId": 1,
+      "shiftId": 4
+    },
+    {
+      "id": 11,
+      "riderId": 2,
+      "shiftId": 4
+    },
+    {
+      "id": 12,
+      "riderId": 3,
+      "shiftId": 5
+    },
+    {
+      "id": 13,
+      "riderId": 4,
+      "shiftId": 5
+    },
+    {
+      "id": 14,
+      "riderId": 8,
+      "shiftId": 5
+    },
+    {
+      "id": 15,
+      "riderId": 5,
+      "shiftId": 6
+    },
+    {
+      "id": 16,
+      "riderId": 6,
+      "shiftId": 6
+    }
+  ]
 }
