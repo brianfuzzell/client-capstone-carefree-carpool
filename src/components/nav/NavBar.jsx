@@ -1,12 +1,13 @@
-import { Link } from "react-router-dom ";
+/* import { Link } from "react-router-dom "; */
+
 export const NavBar = () => {
   return (
-    <ul>
+     <ul>
       <li>
-        <Link to="/schedule">Schedule</Link>
+        Schedule
       </li>
       <li>
-        <Link to="/rides">Rides</Link>
+        Rides
       </li>
       <li>Settings dropdown menu</li>
     </ul>
