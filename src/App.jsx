@@ -1,19 +1,26 @@
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import './App.css'
-import { NavBar } from './components/nav/NavBar'
-import { Schedule } from './components/schedule/Schedule'
-import { Rides } from './components/rides/Rides'
-import { Account } from './components/account/Account'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Login } from "./components/auth/Login";
+import { Register } from "./components/auth/Register";
+import { Authorized } from "../views/Authorized";
+import { ApplicationViews } from "../views/ApplicationViews";
 
 export const App = () => {
-
   return (
-    <>
-    <NavBar />
-    <Schedule />
-    <Rides />
-    <Account />
-    </>      
-  )
-}
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+
+      <Route
+        path="*"
+        element={
+          <Authorized>
+            <ApplicationViews />
+          </Authorized>
+        }
+      />
+    </Routes>
+  );
+};

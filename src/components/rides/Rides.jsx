@@ -1,6 +1,6 @@
 
 
-export const Rides = () => {
+export const Rides = ({ currentUser }) => {
 
     return (
         <>
