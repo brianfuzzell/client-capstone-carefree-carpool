@@ -74,22 +74,6 @@ export const Register = (props) => {
             />
           </div>
         </fieldset>
-        {/* <fieldset>
-          <div className="form-group">
-            <label>
-              <input
-                onChange={(evt) => {
-                  const copy = { ...customer }
-                  copy.isStaff = evt.target.checked
-                  setCustomer(copy)
-                }}
-                type="checkbox"
-                id="isStaff"
-              />
-              I am an employee{" "}
-            </label>
-          </div>
-        </fieldset> */}
         <fieldset>
           <div className="form-group">
             <button className="login-btn btn-info" type="submit">
