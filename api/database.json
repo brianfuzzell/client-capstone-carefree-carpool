@@ -1,144 +1,149 @@
 {
   "users": [
     {
-        "id": 1,
-        "familyName": "Simpsons",
-        "email": "mmmdonuts@yahoo.com"
+      "id": 1,
+      "familyName": "Simpsons",
+      "email": "mmmdonuts@yahoo.com"
     },
     {
-        "id": 2,
-        "familyName": "Flanders",
-        "email": "ned.flanders@aol.com"
+      "id": 2,
+      "familyName": "Flanders",
+      "email": "ned.flanders@aol.com"
     },
     {
-        "id": 3,
-        "familyName": "Wiggum",
-        "email": "thewiggums@netscape.net"
+      "id": 3,
+      "familyName": "Wiggum",
+      "email": "thewiggums@netscape.net"
     },
     {
-        "id": 4,
-        "familyName": "Van Houten",
-        "email": "vanhoutenfamily@aol.com"
+      "id": 4,
+      "familyName": "Van Houten",
+      "email": "vanhoutenfamily@aol.com"
     },
     {
-        "id": 5,
-        "familyName": "Muntz",
-        "email": "muntz-r-us@aol.com"
+      "id": 5,
+      "familyName": "Muntz",
+      "email": "muntz-r-us@aol.com"
     },
     {
-        "id": 6,
-        "familyName": "Lovejoy",
-        "email": "thelovejoys@netscape.net"
+      "id": 6,
+      "familyName": "Lovejoy",
+      "email": "thelovejoys@netscape.net"
+    },
+    {
+      "email": "bfuzzell@gmail.com",
+      "fullName": "Brian Fuzzell",
+      "id": 7
     }
   ],
   "drivers": [
     {
-        "id": 1,
-        "fullName": "Marge Simpson",
-        "phone": "555-555-5551",
-        "userId": 1
+      "id": 1,
+      "fullName": "Marge Simpson",
+      "phone": "555-555-5551",
+      "userId": 1
     },
     {
-        "id": 2,
-        "fullName": "Homer Simpson",
-        "phone": "555-555-5551",
-        "userId": 1
+      "id": 2,
+      "fullName": "Homer Simpson",
+      "phone": "555-555-5551",
+      "userId": 1
     },
     {
-        "id": 3,
-        "fullName": "Ned Flanders",
-        "phone": "555-555-5510",
-        "userId": 2
+      "id": 3,
+      "fullName": "Ned Flanders",
+      "phone": "555-555-5510",
+      "userId": 2
     },
     {
-        "id": 4,
-        "fullName": "Sarah Wiggum",
-        "phone": "555-555-5550",
-        "userId": 3
+      "id": 4,
+      "fullName": "Sarah Wiggum",
+      "phone": "555-555-5550",
+      "userId": 3
     },
     {
-        "id": 5,
-        "fullName": "Chief Wiggum",
-        "phone": "555-555-5550",
-        "userId": 3
+      "id": 5,
+      "fullName": "Chief Wiggum",
+      "phone": "555-555-5550",
+      "userId": 3
     },
     {
-        "id": 6,
-        "fullName": "Luann Van Houten",
-        "phone": "555-555-5556",
-        "userId": 4
+      "id": 6,
+      "fullName": "Luann Van Houten",
+      "phone": "555-555-5556",
+      "userId": 4
     },
     {
-        "id": 7,
-        "fullName": "Kirk Van Houten",
-        "phone": "555-555-5556",
-        "userId": 4
+      "id": 7,
+      "fullName": "Kirk Van Houten",
+      "phone": "555-555-5556",
+      "userId": 4
     },
     {
-        "id": 8,
-        "fullName": "Eddie Muntz",
-        "phone": "555-555-5519",
-        "userId": 5
+      "id": 8,
+      "fullName": "Eddie Muntz",
+      "phone": "555-555-5519",
+      "userId": 5
     },
     {
-        "id": 9,
-        "fullName": "Marilyn Muntz",
-        "phone": "555-555-5519",
-        "userId": 5
+      "id": 9,
+      "fullName": "Marilyn Muntz",
+      "phone": "555-555-5519",
+      "userId": 5
     },
     {
-        "id": 10,
-        "fullName": "Reverend Lovejoy",
-        "phone": "555-555-5777",
-        "userId": 6
+      "id": 10,
+      "fullName": "Reverend Lovejoy",
+      "phone": "555-555-5777",
+      "userId": 6
     },
     {
-        "id": 11,
-        "fullName": "Helen Lovejoy",
-        "phone": "555-555-5777",
-        "userId": 6
+      "id": 11,
+      "fullName": "Helen Lovejoy",
+      "phone": "555-555-5777",
+      "userId": 6
     }
   ],
   "riders": [
     {
-        "id": 1,
-        "fullName": "Bart Simpson",
-        "userId": 1
+      "id": 1,
+      "fullName": "Bart Simpson",
+      "userId": 1
     },
     {
-        "id": 2,
-        "fullName": "Lisa Simpson",
-        "userId": 1
+      "id": 2,
+      "fullName": "Lisa Simpson",
+      "userId": 1
     },
     {
-        "id": 3,
-        "fullName": "Rod Flanders",
-        "userId": 2
+      "id": 3,
+      "fullName": "Rod Flanders",
+      "userId": 2
     },
     {
-        "id": 4,
-        "fullName": "Todd Flanders",
-        "userId": 2
+      "id": 4,
+      "fullName": "Todd Flanders",
+      "userId": 2
     },
     {
-        "id": 5,
-        "fullName": "Ralph Wiggum",
-        "userId": 3
+      "id": 5,
+      "fullName": "Ralph Wiggum",
+      "userId": 3
     },
     {
-        "id": 6,
-        "fullName": "Milhouse Van Houten",
-        "userId": 4
+      "id": 6,
+      "fullName": "Milhouse Van Houten",
+      "userId": 4
     },
     {
-        "id": 7,
-        "fullName": "Nelson Muntz",
-        "userId": 5
+      "id": 7,
+      "fullName": "Nelson Muntz",
+      "userId": 5
     },
     {
-        "id": 8,
-        "fullName": "Jessica Lovejoy",
-        "userId": 6
+      "id": 8,
+      "fullName": "Jessica Lovejoy",
+      "userId": 6
     }
   ],
   "shifts": [
