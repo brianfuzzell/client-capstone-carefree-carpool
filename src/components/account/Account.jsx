@@ -1,6 +1,6 @@
 
 
-export const Account = () => {
+export const Account = ({ currentUser }) => {
     return (
         <>
             <h2>Account</h2>
