@@ -2,38 +2,27 @@
   "users": [
     {
       "id": 1,
-      "familyName": "Simpsons",
-      "email": "mmmdonuts@yahoo.com"
+      "familyName": "Simpsons"
     },
     {
       "id": 2,
-      "familyName": "Flanders",
-      "email": "ned.flanders@aol.com"
+      "familyName": "Flanders"
     },
     {
       "id": 3,
-      "familyName": "Wiggum",
-      "email": "thewiggums@netscape.net"
+      "familyName": "Wiggum"
     },
     {
       "id": 4,
-      "familyName": "Van Houten",
-      "email": "vanhoutenfamily@aol.com"
+      "familyName": "Van Houten"
     },
     {
       "id": 5,
-      "familyName": "Muntz",
-      "email": "muntz-r-us@aol.com"
+      "familyName": "Muntz"
     },
     {
       "id": 6,
-      "familyName": "Lovejoy",
-      "email": "thelovejoys@netscape.net"
-    },
-    {
-      "email": "bfuzzell@gmail.com",
-      "fullName": "Brian Fuzzell",
-      "id": 7
+      "familyName": "Lovejoy"
     }
   ],
   "drivers": [
@@ -41,66 +30,77 @@
       "id": 1,
       "fullName": "Marge Simpson",
       "phone": "555-555-5551",
+      "email": "margesimpson@yahoo.com",
       "userId": 1
     },
     {
       "id": 2,
       "fullName": "Homer Simpson",
-      "phone": "555-555-5551",
+      "phone": "555-555-5552",
+      "email": "mmmdonuts@yahoo.com",
       "userId": 1
     },
     {
       "id": 3,
       "fullName": "Ned Flanders",
       "phone": "555-555-5510",
+      "email": "ned.flanders@aol.com",
       "userId": 2
     },
     {
       "id": 4,
       "fullName": "Sarah Wiggum",
-      "phone": "555-555-5550",
+      "phone": "555-555-5500",
+      "email": "thewiggums@netscape.net",
       "userId": 3
     },
     {
       "id": 5,
       "fullName": "Chief Wiggum",
-      "phone": "555-555-5550",
+      "phone": "555-555-5100",
+      "email": "thewiggums@netscape.net",
       "userId": 3
     },
     {
       "id": 6,
       "fullName": "Luann Van Houten",
-      "phone": "555-555-5556",
+      "phone": "555-555-5123",
+      "email": "vanhoutenfamily@aol.com",
       "userId": 4
     },
     {
       "id": 7,
       "fullName": "Kirk Van Houten",
-      "phone": "555-555-5556",
+      "phone": "555-555-5456",
+      "email": "vanhoutenfamily@aol.com",
       "userId": 4
     },
     {
       "id": 8,
       "fullName": "Eddie Muntz",
-      "phone": "555-555-5519",
+      "phone": "555-555-5987",
+      "email": "muntz-r-us@aol.com",
       "userId": 5
     },
     {
       "id": 9,
       "fullName": "Marilyn Muntz",
-      "phone": "555-555-5519",
+      "phone": "555-555-5000",
+      "email": "mmuntz@aol.com",
       "userId": 5
     },
     {
       "id": 10,
       "fullName": "Reverend Lovejoy",
       "phone": "555-555-5777",
+      "email": "thelovejoys@netscape.net",
       "userId": 6
     },
     {
       "id": 11,
       "fullName": "Helen Lovejoy",
-      "phone": "555-555-5777",
+      "phone": "555-555-5710",
+      "email": "thelovejoys@netscape.net",
       "userId": 6
     }
   ],
