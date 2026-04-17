@@ -1,21 +1,24 @@
 import { r as __toESM, t as require_react } from "./react-BQupsjBO.js";
 import { a as useBootstrapPrefix, c as require_classnames, i as useBootstrapMinBreakpoint, n as ThemeProvider, o as useIsRTL, r as useBootstrapBreakpoints, s as require_jsx_runtime, t as DEFAULT_BREAKPOINTS } from "./ThemeProvider-CVULedHS.js";
-import { a as useEventCallback, l as SelectableContext, u as makeEventKey } from "./querySelectorAll-MHpoZ79M.js";
-import { i as require_browser, n as useUncontrolled, r as useUncontrolledProp } from "./esm-Ci1PRbhB.js";
-import { _ as NoopTransition, a as getSharedManager, b as NavbarCollapse, c as OffcanvasHeader, d as ModalContext, f as OffcanvasToggling, g as renderTransition, h as Modal_default$1, i as Offcanvas_default, l as AbstractModalHeader, m as Fade, n as NavbarText, o as hasClass, p as OffcanvasBody, r as NavbarOffcanvas, s as OffcanvasTitle, t as Navbar_default, u as CloseButton, v as useWaitForDOMRef, x as NavbarBrand, y as NavbarToggle } from "./Navbar-B-Sbr79A.js";
-import { a as canUseDOM_default, i as addEventListener, n as listen, o as require_prop_types, r as removeEventListener, s as ownerDocument, t as useMergedRefs } from "./useMergedRefs-CRrOysGQ.js";
-import { a as createChainedFunction, c as getChildRef, d as ENTERING, f as EXITING, i as triggerBrowserReflow, l as isEscKey, n as TransitionWrapper, o as transitionEndListener, r as safeFindDOMNode, s as transitionEnd, t as Collapse } from "./Collapse-Cj8uXe83.js";
-import { t as require_react_dom } from "./react-dom-BWJlfP31.js";
-import { a as useCommittedRef, i as useEventCallback$1, n as contains, r as useIsomorphicEffect_default } from "./useWindow-C9XNSja6.js";
-import { t as useMergedRefs$1 } from "./useMergedRefs-zWTFjjq0.js";
-import { t as divWithClassName_default } from "./divWithClassName-Dr8Pay26.js";
-import { _ as usePopper, a as alignPropType, c as DropdownItem, d as $c7eafbbe1ea5834e$export$619500959fc48b26, f as $c7eafbbe1ea5834e$export$9f8ac96af4b1b2ae, g as require_warning, h as useClickOutside, i as DropdownMenu, l as DropdownHeader, m as getRefTarget, n as Dropdown_default, o as context$1, p as mergeOptionsWithPopperConfig, r as DropdownToggle, s as DropdownItemText, t as NavDropdown_default, u as DropdownDivider, v as useUncontrolledProp$1 } from "./NavDropdown-B_CUoHPj.js";
-import { a as Anchor, i as TabContext, r as useNavItem, s as useCallbackRef$1, t as NavLink } from "./NavLink-B1S-9g_F.js";
+import { t as require_prop_types } from "./prop-types-CbnkJl4q.js";
+import { a as FormLabel, c as FormGroup, d as FormCheck_default, f as forEach, i as FormSelect, l as FormFloating, m as FormCheckInput, n as FloatingLabel, o as Col, p as map, r as FormText, s as useCol, t as Form_default, u as FormControl_default } from "./Form-7fEtsVYM.js";
+import { t as require_warning } from "./warning-CHGTDZNz.js";
+import { i as require_browser, n as useUncontrolled, r as useUncontrolledProp } from "./esm-CQTfjAi0.js";
+import { a as canUseDOM_default, i as addEventListener, n as listen, o as ownerDocument, r as removeEventListener, t as useMergedRefs } from "./useMergedRefs-DaOayWAv.js";
+import { a as createChainedFunction, c as getChildRef, d as ENTERING, f as EXITING, i as triggerBrowserReflow, l as isEscKey, n as TransitionWrapper, o as transitionEndListener, r as safeFindDOMNode, s as transitionEnd, t as Collapse } from "./Collapse-B80Qwyf1.js";
+import { t as require_react_dom } from "./react-dom-BvhQzt09.js";
+import { a as useAccordionButton, c as context, i as AccordionButton, n as AccordionItem, o as AccordionBody, r as AccordionHeader, s as AccordionCollapse, t as Accordion_default } from "./Accordion-CmUgpgPU.js";
+import { a as useCommittedRef, i as useEventCallback, r as contains, t as useIsomorphicEffect_default } from "./useIsomorphicEffect-CA1huh6N.js";
+import { t as divWithClassName_default } from "./divWithClassName-lxZTgtYq.js";
+import { i as TabContext, l as useCallbackRef$1, r as useNavItem, s as Anchor, t as NavLink } from "./NavLink-BoXCTaQl.js";
+import { a as makeEventKey, i as SelectableContext, u as useEventCallback$1 } from "./NavbarContext-BhvmaKgG.js";
+import { _ as renderTransition, a as OffcanvasTitle, b as CloseButton, c as OffcanvasBody, d as NavbarBrand, f as AbstractModalHeader, g as Modal_default$1, h as hasClass, i as Offcanvas_default, l as NavbarToggle, m as getSharedManager, n as NavbarText, o as OffcanvasHeader, p as ModalContext, r as NavbarOffcanvas, s as OffcanvasToggling, t as Navbar_default, u as NavbarCollapse, v as NoopTransition, x as Fade, y as useWaitForDOMRef } from "./Navbar-BnVI9rAs.js";
 import Button from "./react-bootstrap_Button.js";
+import { a as CardLink, c as CardHeader, i as CardSubtitle, l as CardFooter, n as CardTitle, o as CardImgOverlay, r as CardText, s as CardImg, t as Card_default, u as CardBody } from "./Card-B5VR3lXf.js";
 import Container from "./react-bootstrap_Container.js";
-import { n as NavItem, r as Nav_default$1, t as Nav_default } from "./Nav-ChZSjedz.js";
-import { a as useAccordionButton, c as context, i as AccordionButton, n as AccordionItem, o as AccordionBody, r as AccordionHeader, s as AccordionCollapse, t as Accordion_default } from "./Accordion-CLq7AmrO.js";
-import { a as CardLink, c as CardHeader, i as CardSubtitle, l as CardFooter, n as CardTitle, o as CardImgOverlay, r as CardText, s as CardImg, t as Card_default, u as CardBody } from "./Card-DrHOvAh7.js";
+import { _ as useUncontrolledProp$1, a as alignPropType, c as DropdownItem, d as $c7eafbbe1ea5834e$export$619500959fc48b26, f as $c7eafbbe1ea5834e$export$9f8ac96af4b1b2ae, g as usePopper, h as useClickOutside, i as DropdownMenu, l as DropdownHeader, m as getRefTarget, n as Dropdown_default, o as context$1, p as mergeOptionsWithPopperConfig, r as DropdownToggle, s as DropdownItemText, t as NavDropdown_default, u as DropdownDivider } from "./NavDropdown-CJbvJqqz.js";
+import { t as useMergedRefs$1 } from "./useMergedRefs-CQlaThw-.js";
+import { n as NavItem, r as Nav_default$1, t as Nav_default } from "./Nav-CBMNj3jh.js";
 //#region node_modules/react-bootstrap/esm/AlertHeading.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_classnames = /* @__PURE__ */ __toESM(require_classnames());
@@ -47,7 +50,7 @@ AlertLink.displayName = "AlertLink";
 var Alert = /* @__PURE__ */ import_react.forwardRef((uncontrolledProps, ref) => {
 	const { bsPrefix, show = true, closeLabel = "Close alert", closeVariant, className, children, variant = "primary", onClose, dismissible, transition = Fade, ...props } = useUncontrolled(uncontrolledProps, { show: "onClose" });
 	const prefix = useBootstrapPrefix(bsPrefix, "alert");
-	const handleClose = useEventCallback$1((e) => {
+	const handleClose = useEventCallback((e) => {
 		if (onClose) onClose(false, e);
 	});
 	const Transition = transition === true ? Fade : transition;
@@ -321,39 +324,6 @@ var CarouselItem = /* @__PURE__ */ import_react.forwardRef(({ as: Component = "d
 });
 CarouselItem.displayName = "CarouselItem";
 //#endregion
-//#region node_modules/react-bootstrap/esm/ElementChildren.js
-/**
-* Iterates through children that are typically specified as `props.children`,
-* but only maps over children that are "valid elements".
-*
-* The mapFunction provided index will be normalised to the components mapped,
-* so an invalid component would not increase the index.
-*
-*/
-function map(children, func) {
-	let index = 0;
-	return import_react.Children.map(children, (child) => /* @__PURE__ */ import_react.isValidElement(child) ? func(child, index++) : child);
-}
-/**
-* Iterates through children that are "valid elements".
-*
-* The provided forEachFunc(child, index) will be called for each
-* leaf child with the index reflecting the position relative to "valid components".
-*/
-function forEach(children, func) {
-	let index = 0;
-	import_react.Children.forEach(children, (child) => {
-		if (/* @__PURE__ */ import_react.isValidElement(child)) func(child, index++);
-	});
-}
-/**
-* Finds whether a component's `children` prop includes a React element of the
-* specified type.
-*/
-function hasChildOfType(children, type) {
-	return import_react.Children.toArray(children).some((child) => /* @__PURE__ */ import_react.isValidElement(child) && child.type === type);
-}
-//#endregion
 //#region node_modules/react-bootstrap/esm/Carousel.js
 var SWIPE_THRESHOLD = 40;
 function isVisible(element) {
@@ -418,7 +388,7 @@ var Carousel = /* @__PURE__ */ import_react.forwardRef(({ defaultActiveIndex = 0
 		wrap,
 		numChildren
 	]);
-	const next = useEventCallback$1((event) => {
+	const next = useEventCallback((event) => {
 		if (isSliding) return;
 		let nextActiveIndex = renderedActiveIndex + 1;
 		if (nextActiveIndex >= numChildren) {
@@ -434,7 +404,7 @@ var Carousel = /* @__PURE__ */ import_react.forwardRef(({ defaultActiveIndex = 0
 		prev,
 		next
 	}));
-	const nextWhenVisible = useEventCallback$1(() => {
+	const nextWhenVisible = useEventCallback(() => {
 		if (!document.hidden && isVisible(elementRef.current)) if (isRTL) prev();
 		else next();
 	});
@@ -613,48 +583,9 @@ var Carousel_default = Object.assign(Carousel, {
 	Item: CarouselItem
 });
 //#endregion
-//#region node_modules/react-bootstrap/esm/Col.js
-function useCol({ as, bsPrefix, className, ...props }) {
-	bsPrefix = useBootstrapPrefix(bsPrefix, "col");
-	const breakpoints = useBootstrapBreakpoints();
-	const minBreakpoint = useBootstrapMinBreakpoint();
-	const spans = [];
-	const classes = [];
-	breakpoints.forEach((brkPoint) => {
-		const propValue = props[brkPoint];
-		delete props[brkPoint];
-		let span;
-		let offset;
-		let order;
-		if (typeof propValue === "object" && propValue != null) ({span, offset, order} = propValue);
-		else span = propValue;
-		const infix = brkPoint !== minBreakpoint ? `-${brkPoint}` : "";
-		if (span) spans.push(span === true ? `${bsPrefix}${infix}` : `${bsPrefix}${infix}-${span}`);
-		if (order != null) classes.push(`order${infix}-${order}`);
-		if (offset != null) classes.push(`offset${infix}-${offset}`);
-	});
-	return [{
-		...props,
-		className: (0, import_classnames.default)(className, ...spans, ...classes)
-	}, {
-		as,
-		bsPrefix,
-		spans
-	}];
-}
-var Col = /* @__PURE__ */ import_react.forwardRef((props, ref) => {
-	const [{ className, ...colProps }, { as: Component = "div", bsPrefix, spans }] = useCol(props);
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Component, {
-		...colProps,
-		ref,
-		className: (0, import_classnames.default)(className, !spans.length && bsPrefix)
-	});
-});
-Col.displayName = "Col";
-//#endregion
 //#region node_modules/react-bootstrap/esm/DropdownButton.js
 var import_prop_types = /* @__PURE__ */ __toESM(require_prop_types());
-var propTypes$5 = {
+var propTypes$3 = {
 	id: import_prop_types.default.string,
 	href: import_prop_types.default.string,
 	onClick: import_prop_types.default.func,
@@ -700,10 +631,10 @@ var DropdownButton = /* @__PURE__ */ import_react.forwardRef(({ title, children,
 	})]
 }));
 DropdownButton.displayName = "DropdownButton";
-DropdownButton.propTypes = propTypes$5;
+DropdownButton.propTypes = propTypes$3;
 //#endregion
 //#region node_modules/react-bootstrap/esm/Image.js
-var propTypes$4 = {
+var propTypes$2 = {
 	bsPrefix: import_prop_types.default.string,
 	fluid: import_prop_types.default.bool,
 	rounded: import_prop_types.default.bool,
@@ -728,7 +659,7 @@ var FigureImage = /* @__PURE__ */ import_react.forwardRef(({ className, fluid = 
 	className: (0, import_classnames.default)(className, "figure-img")
 }));
 FigureImage.displayName = "FigureImage";
-FigureImage.propTypes = propTypes$4;
+FigureImage.propTypes = propTypes$2;
 //#endregion
 //#region node_modules/react-bootstrap/esm/FigureCaption.js
 var FigureCaption = /* @__PURE__ */ import_react.forwardRef(({ className, bsPrefix, as: Component = "figcaption", ...props }, ref) => {
@@ -754,253 +685,6 @@ Figure.displayName = "Figure";
 var Figure_default = Object.assign(Figure, {
 	Image: FigureImage,
 	Caption: FigureCaption
-});
-//#endregion
-//#region node_modules/react-bootstrap/esm/Feedback.js
-var propTypes$3 = {
-	type: import_prop_types.default.string,
-	tooltip: import_prop_types.default.bool,
-	as: import_prop_types.default.elementType
-};
-var Feedback = /* @__PURE__ */ import_react.forwardRef(({ as: Component = "div", className, type = "valid", tooltip = false, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Component, {
-	...props,
-	ref,
-	className: (0, import_classnames.default)(className, `${type}-${tooltip ? "tooltip" : "feedback"}`)
-}));
-Feedback.displayName = "Feedback";
-Feedback.propTypes = propTypes$3;
-//#endregion
-//#region node_modules/react-bootstrap/esm/FormContext.js
-var FormContext = /* @__PURE__ */ import_react.createContext({});
-//#endregion
-//#region node_modules/react-bootstrap/esm/FormCheckInput.js
-var FormCheckInput = /* @__PURE__ */ import_react.forwardRef(({ id, bsPrefix, className, type = "checkbox", isValid = false, isInvalid = false, as: Component = "input", ...props }, ref) => {
-	const { controlId } = (0, import_react.useContext)(FormContext);
-	bsPrefix = useBootstrapPrefix(bsPrefix, "form-check-input");
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Component, {
-		...props,
-		ref,
-		type,
-		id: id || controlId,
-		className: (0, import_classnames.default)(className, bsPrefix, isValid && "is-valid", isInvalid && "is-invalid")
-	});
-});
-FormCheckInput.displayName = "FormCheckInput";
-//#endregion
-//#region node_modules/react-bootstrap/esm/FormCheckLabel.js
-var FormCheckLabel = /* @__PURE__ */ import_react.forwardRef(({ bsPrefix, className, htmlFor, ...props }, ref) => {
-	const { controlId } = (0, import_react.useContext)(FormContext);
-	bsPrefix = useBootstrapPrefix(bsPrefix, "form-check-label");
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-		...props,
-		ref,
-		htmlFor: htmlFor || controlId,
-		className: (0, import_classnames.default)(className, bsPrefix)
-	});
-});
-FormCheckLabel.displayName = "FormCheckLabel";
-//#endregion
-//#region node_modules/react-bootstrap/esm/FormCheck.js
-var FormCheck = /* @__PURE__ */ import_react.forwardRef(({ id, bsPrefix, bsSwitchPrefix, inline = false, reverse = false, disabled = false, isValid = false, isInvalid = false, feedbackTooltip = false, feedback, feedbackType, className, style, title = "", type = "checkbox", label, children, as = "input", ...props }, ref) => {
-	bsPrefix = useBootstrapPrefix(bsPrefix, "form-check");
-	bsSwitchPrefix = useBootstrapPrefix(bsSwitchPrefix, "form-switch");
-	const { controlId } = (0, import_react.useContext)(FormContext);
-	const innerFormContext = (0, import_react.useMemo)(() => ({ controlId: id || controlId }), [controlId, id]);
-	const hasLabel = !children && label != null && label !== false || hasChildOfType(children, FormCheckLabel);
-	const input = /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormCheckInput, {
-		...props,
-		type: type === "switch" ? "checkbox" : type,
-		ref,
-		isValid,
-		isInvalid,
-		disabled,
-		as
-	});
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormContext.Provider, {
-		value: innerFormContext,
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			style,
-			className: (0, import_classnames.default)(className, hasLabel && bsPrefix, inline && `${bsPrefix}-inline`, reverse && `${bsPrefix}-reverse`, type === "switch" && bsSwitchPrefix),
-			children: children || /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-				input,
-				hasLabel && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormCheckLabel, {
-					title,
-					children: label
-				}),
-				feedback && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Feedback, {
-					type: feedbackType,
-					tooltip: feedbackTooltip,
-					children: feedback
-				})
-			] })
-		})
-	});
-});
-FormCheck.displayName = "FormCheck";
-var FormCheck_default = Object.assign(FormCheck, {
-	Input: FormCheckInput,
-	Label: FormCheckLabel
-});
-//#endregion
-//#region node_modules/react-bootstrap/esm/FormControl.js
-var import_warning = /* @__PURE__ */ __toESM(require_warning());
-var FormControl = /* @__PURE__ */ import_react.forwardRef(({ bsPrefix, type, size, htmlSize, id, className, isValid = false, isInvalid = false, plaintext, readOnly, as: Component = "input", ...props }, ref) => {
-	const { controlId } = (0, import_react.useContext)(FormContext);
-	bsPrefix = useBootstrapPrefix(bsPrefix, "form-control");
-	(0, import_warning.default)(controlId == null || !id, "`controlId` is ignored on `<FormControl>` when `id` is specified.");
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Component, {
-		...props,
-		type,
-		size: htmlSize,
-		ref,
-		readOnly,
-		id: id || controlId,
-		className: (0, import_classnames.default)(className, plaintext ? `${bsPrefix}-plaintext` : bsPrefix, size && `${bsPrefix}-${size}`, type === "color" && `${bsPrefix}-color`, isValid && "is-valid", isInvalid && "is-invalid")
-	});
-});
-FormControl.displayName = "FormControl";
-var FormControl_default = Object.assign(FormControl, { Feedback });
-//#endregion
-//#region node_modules/react-bootstrap/esm/FormFloating.js
-var FormFloating = /* @__PURE__ */ import_react.forwardRef(({ className, bsPrefix, as: Component = "div", ...props }, ref) => {
-	bsPrefix = useBootstrapPrefix(bsPrefix, "form-floating");
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Component, {
-		ref,
-		className: (0, import_classnames.default)(className, bsPrefix),
-		...props
-	});
-});
-FormFloating.displayName = "FormFloating";
-//#endregion
-//#region node_modules/react-bootstrap/esm/FormGroup.js
-var FormGroup = /* @__PURE__ */ import_react.forwardRef(({ controlId, as: Component = "div", ...props }, ref) => {
-	const context = (0, import_react.useMemo)(() => ({ controlId }), [controlId]);
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormContext.Provider, {
-		value: context,
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Component, {
-			...props,
-			ref
-		})
-	});
-});
-FormGroup.displayName = "FormGroup";
-//#endregion
-//#region node_modules/react-bootstrap/esm/FormLabel.js
-var FormLabel = /* @__PURE__ */ import_react.forwardRef(({ as: Component = "label", bsPrefix, column = false, visuallyHidden = false, className, htmlFor, ...props }, ref) => {
-	const { controlId } = (0, import_react.useContext)(FormContext);
-	bsPrefix = useBootstrapPrefix(bsPrefix, "form-label");
-	let columnClass = "col-form-label";
-	if (typeof column === "string") columnClass = `${columnClass} ${columnClass}-${column}`;
-	const classes = (0, import_classnames.default)(className, bsPrefix, visuallyHidden && "visually-hidden", column && columnClass);
-	(0, import_warning.default)(controlId == null || !htmlFor, "`controlId` is ignored on `<FormLabel>` when `htmlFor` is specified.");
-	htmlFor = htmlFor || controlId;
-	if (column) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Col, {
-		ref,
-		as: "label",
-		className: classes,
-		htmlFor,
-		...props
-	});
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Component, {
-		ref,
-		className: classes,
-		htmlFor,
-		...props
-	});
-});
-FormLabel.displayName = "FormLabel";
-//#endregion
-//#region node_modules/react-bootstrap/esm/FormRange.js
-var FormRange = /* @__PURE__ */ import_react.forwardRef(({ bsPrefix, className, id, ...props }, ref) => {
-	const { controlId } = (0, import_react.useContext)(FormContext);
-	bsPrefix = useBootstrapPrefix(bsPrefix, "form-range");
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
-		...props,
-		type: "range",
-		ref,
-		className: (0, import_classnames.default)(className, bsPrefix),
-		id: id || controlId
-	});
-});
-FormRange.displayName = "FormRange";
-//#endregion
-//#region node_modules/react-bootstrap/esm/FormSelect.js
-var FormSelect = /* @__PURE__ */ import_react.forwardRef(({ bsPrefix, size, htmlSize, className, isValid = false, isInvalid = false, id, ...props }, ref) => {
-	const { controlId } = (0, import_react.useContext)(FormContext);
-	bsPrefix = useBootstrapPrefix(bsPrefix, "form-select");
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("select", {
-		...props,
-		size: htmlSize,
-		ref,
-		className: (0, import_classnames.default)(className, bsPrefix, size && `${bsPrefix}-${size}`, isValid && `is-valid`, isInvalid && `is-invalid`),
-		id: id || controlId
-	});
-});
-FormSelect.displayName = "FormSelect";
-//#endregion
-//#region node_modules/react-bootstrap/esm/FormText.js
-var FormText = /* @__PURE__ */ import_react.forwardRef(({ bsPrefix, className, as: Component = "small", muted, ...props }, ref) => {
-	bsPrefix = useBootstrapPrefix(bsPrefix, "form-text");
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Component, {
-		...props,
-		ref,
-		className: (0, import_classnames.default)(className, bsPrefix, muted && "text-muted")
-	});
-});
-FormText.displayName = "FormText";
-//#endregion
-//#region node_modules/react-bootstrap/esm/Switch.js
-var Switch = /* @__PURE__ */ import_react.forwardRef((props, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormCheck_default, {
-	...props,
-	ref,
-	type: "switch"
-}));
-Switch.displayName = "Switch";
-var Switch_default = Object.assign(Switch, {
-	Input: FormCheck_default.Input,
-	Label: FormCheck_default.Label
-});
-//#endregion
-//#region node_modules/react-bootstrap/esm/FloatingLabel.js
-var FloatingLabel = /* @__PURE__ */ import_react.forwardRef(({ bsPrefix, className, children, controlId, label, ...props }, ref) => {
-	bsPrefix = useBootstrapPrefix(bsPrefix, "form-floating");
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FormGroup, {
-		ref,
-		className: (0, import_classnames.default)(className, bsPrefix),
-		controlId,
-		...props,
-		children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-			htmlFor: controlId,
-			children: label
-		})]
-	});
-});
-FloatingLabel.displayName = "FloatingLabel";
-//#endregion
-//#region node_modules/react-bootstrap/esm/Form.js
-var propTypes$2 = {
-	_ref: import_prop_types.default.any,
-	validated: import_prop_types.default.bool,
-	as: import_prop_types.default.elementType
-};
-var Form = /* @__PURE__ */ import_react.forwardRef(({ className, validated, as: Component = "form", ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Component, {
-	...props,
-	ref,
-	className: (0, import_classnames.default)(className, validated && "was-validated")
-}));
-Form.displayName = "Form";
-Form.propTypes = propTypes$2;
-var Form_default = Object.assign(Form, {
-	Group: FormGroup,
-	Control: FormControl_default,
-	Floating: FormFloating,
-	Check: FormCheck_default,
-	Switch: Switch_default,
-	Label: FormLabel,
-	Text: FormText,
-	Range: FormRange,
-	Select: FormSelect,
-	FloatingLabel
 });
 //#endregion
 //#region node_modules/react-bootstrap/esm/InputGroupText.js
@@ -1043,6 +727,7 @@ var InputGroup_default = Object.assign(InputGroup, {
 });
 //#endregion
 //#region node_modules/react-bootstrap/esm/ListGroupItem.js
+var import_warning = /* @__PURE__ */ __toESM(require_warning());
 var ListGroupItem = /* @__PURE__ */ import_react.forwardRef(({ bsPrefix, active, disabled, eventKey, className, variant, action, as, ...props }, ref) => {
 	bsPrefix = useBootstrapPrefix(bsPrefix, "list-group-item");
 	const [navItemProps, meta] = useNavItem({
@@ -1050,7 +735,7 @@ var ListGroupItem = /* @__PURE__ */ import_react.forwardRef(({ bsPrefix, active,
 		active,
 		...props
 	});
-	const handleClick = useEventCallback$1((event) => {
+	const handleClick = useEventCallback((event) => {
 		if (disabled) {
 			event.preventDefault();
 			event.stopPropagation();
@@ -1224,7 +909,7 @@ var Modal = /* @__PURE__ */ import_react.forwardRef(({ bsPrefix, className, styl
 	const removeStaticModalAnimationRef = (0, import_react.useRef)(null);
 	const [modal, setModalRef] = useCallbackRef();
 	const mergedRef = useMergedRefs(ref, setModalRef);
-	const handleHide = useEventCallback$1(onHide);
+	const handleHide = useEventCallback(onHide);
 	const isRTL = useIsRTL();
 	bsPrefix = useBootstrapPrefix(bsPrefix, "modal");
 	const modalContext = (0, import_react.useMemo)(() => ({ onHide: handleHide }), [handleHide]);
@@ -1241,7 +926,7 @@ var Modal = /* @__PURE__ */ import_react.forwardRef(({ bsPrefix, className, styl
 			paddingLeft: !containerIsOverflowing && modalIsOverflowing ? scrollbarSize() : void 0
 		});
 	}
-	const handleWindowResize = useEventCallback$1(() => {
+	const handleWindowResize = useEventCallback(() => {
 		if (modal) updateDialogStyle(modal.dialog);
 	});
 	useWillUnmount(() => {
@@ -1393,7 +1078,7 @@ function useRootClose(ref, onRootClose, { disabled, clickTrigger } = {}) {
 		disabled,
 		clickTrigger
 	});
-	const handleKeyUp = useEventCallback((e) => {
+	const handleKeyUp = useEventCallback$1((e) => {
 		if (isEscKey(e)) onClose(e);
 	});
 	(0, import_react.useEffect)(() => {
@@ -1616,7 +1301,7 @@ var Overlay = /* @__PURE__ */ import_react.forwardRef(({ children: overlay, tran
 	const [ref, modifiers] = useOverlayOffset(outerProps.offset);
 	const mergedRef = useMergedRefs(outerRef, ref);
 	const actualTransition = transition === true ? Fade : transition || void 0;
-	const handleFirstUpdate = useEventCallback$1((state) => {
+	const handleFirstUpdate = useEventCallback((state) => {
 		setFirstRenderedState(state);
 		popperConfig == null || popperConfig.onFirstUpdate == null || popperConfig.onFirstUpdate(state);
 	});
@@ -2385,7 +2070,7 @@ var ToastContext = /* @__PURE__ */ import_react.createContext({ onClose() {} });
 var ToastHeader = /* @__PURE__ */ import_react.forwardRef(({ bsPrefix, closeLabel = "Close", closeVariant, closeButton = true, className, children, ...props }, ref) => {
 	bsPrefix = useBootstrapPrefix(bsPrefix, "toast-header");
 	const context = (0, import_react.useContext)(ToastContext);
-	const handleClick = useEventCallback$1((e) => {
+	const handleClick = useEventCallback((e) => {
 		context == null || context.onClose == null || context.onClose(e);
 	});
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {

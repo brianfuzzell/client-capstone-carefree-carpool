@@ -1,7 +1,7 @@
 "use client";
 import { r as __toESM, t as require_react } from "./react-BQupsjBO.js";
 import { a as useBootstrapPrefix, c as require_classnames, s as require_jsx_runtime } from "./ThemeProvider-CVULedHS.js";
-import { n as useButtonProps } from "./Button-z_Ht61xD.js";
+import { n as useButtonProps } from "./Button-C3FJUp6K.js";
 //#region node_modules/react-bootstrap/esm/Button.js
 var import_classnames = /* @__PURE__ */ __toESM(require_classnames());
 var import_react = /* @__PURE__ */ __toESM(require_react());

@@ -1,21 +1,24 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { createUser, getUserByEmail } from "../../services/userService.js"
+import { createUser } from "../../services/userService.js"
+import { getDriverByEmail, createDriver } from "../../services/driverService.js"
 
 export const Register = (props) => {
-  const [user, setUser] = useState({
+  const [driver, setDriver] = useState({
     email: "",
-    fullName: ""
+    fullName: "",
+    phone: "",
+    userId: null
   })
   let navigate = useNavigate()
 
-  const registerNewUser = () => {
-    createUser(user).then((createdUser) => {
-      if (createdUser.hasOwnProperty("id")) {
+  const registerNewDriver = () => {
+    createDriver(driver).then((createDriver) => {
+      if (createDriver.hasOwnProperty("id")) {
         localStorage.setItem(
-          "carpool_user",
+          "carpool_driver",
           JSON.stringify({
-            id: createdUser.id
+            id: createDriver.id
           })
         )
 
@@ -26,21 +29,21 @@ export const Register = (props) => {
 
   const handleRegister = (e) => {
     e.preventDefault()
-    getUserByEmail(user.email).then((response) => {
+    getDriverByEmail(driver.email).then((response) => {
       if (response.length > 0) {
         // Duplicate email. No good.
         window.alert("Account with that email address already exists")
       } else {
         // Good email, create user.
-        registerNewUser()
+        registerNewDriver()
       }
     })
   }
 
-  const updateUser = (evt) => {
-    const copy = { ...user }
+  const updateDriver = (evt) => {
+    const copy = { ...driver }
     copy[evt.target.id] = evt.target.value
-    setUser(copy)
+    setDriver(copy)
   }
 
   return (
@@ -51,7 +54,7 @@ export const Register = (props) => {
         <fieldset>
           <div className="form-group">
             <input
-              onChange={updateUser}
+              onChange={updateDriver}
               type="text"
               id="fullName"
               className="form-control"
@@ -64,7 +67,7 @@ export const Register = (props) => {
         <fieldset>
           <div className="form-group">
             <input
-              onChange={updateUser}
+              onChange={updateDriver}
               type="email"
               id="email"
               className="form-control"

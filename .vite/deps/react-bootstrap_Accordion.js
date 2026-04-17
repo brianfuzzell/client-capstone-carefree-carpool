@@ -1,3 +1,3 @@
 "use client";
-import { t as Accordion_default } from "./Accordion-CLq7AmrO.js";
+import { t as Accordion_default } from "./Accordion-CmUgpgPU.js";
 export { Accordion_default as default };

@@ -18,11 +18,11 @@ export const NavBar = () => {
             <Nav.Link href="/rides">Rides</Nav.Link>
             <NavDropdown title="Settings" id="basic-nav-dropdown">
               <NavDropdown.Item href="/account">Account</NavDropdown.Item>
-              {localStorage.getItem("carpool_user") ? (
+              {localStorage.getItem("carpool_driver") ? (
                 <NavDropdown.Item
                   href="/login"
                   onClick={() => {
-                    localStorage.removeItem("carpool_user");
+                    localStorage.removeItem("carpool_driver");
                     navigate("/", { replace: true });
                   }}
                 >

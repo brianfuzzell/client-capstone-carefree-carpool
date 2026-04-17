@@ -5,16 +5,51 @@ import { Welcome } from "../src/components/welcome/Welcome";
 import { Schedule } from "../src/components/schedule/Schedule";
 import { Rides } from "../src/components/rides/Rides";
 import { Account } from "../src/components/account/Account";
+import { getUserDrivers, getUserRiders } from "../src/services/userService";
 
 export const ApplicationViews = () => {
-  const [currentUser, setCurrentUser] = useState({});
+  const [currentDriver, setCurrentDriver] = useState({});
+  const [userDrivers, setUserDrivers] = useState([]);
+  const [userRiders, setUserRiders] = useState([]);
 
   useEffect(() => {
-    const localCarpoolUser = localStorage.getItem("carpool_user");
-    const carpoolUserObject = JSON.parse(localCarpoolUser);
+    const localCarpoolDriver = localStorage.getItem("carpool_driver");
+    const carpoolDriverObject = JSON.parse(localCarpoolDriver);
 
-    setCurrentUser(carpoolUserObject);
+    setCurrentDriver(carpoolDriverObject);
   }, []);
+
+  useEffect(() => {
+    if (currentDriver.id) {
+      console.log("currentDriver:", currentDriver);
+      console.log("Looking for userId:", currentDriver.userId);
+
+      getUserDrivers().then((usersArray) => {
+        console.log("usersArray:", usersArray);
+        const foundUser = usersArray.find(
+          (user) => user.id === currentDriver.userId,
+        );
+        console.log("foundUser:", foundUser);
+
+        const drivers = foundUser?.drivers || [];
+
+        setUserDrivers(drivers);
+      });
+    }
+  }, [currentDriver.id]);
+
+  useEffect(() => {
+    if (currentDriver.id) {
+      getUserRiders().then((usersArray) => {
+        const foundUser = usersArray.find(
+          (user) => user.id === currentDriver.userId,
+        );
+        const riders = foundUser?.riders || [];
+
+        setUserRiders(riders);
+      });
+    }
+  }, [currentDriver.id]);
 
   return (
     <Routes>
@@ -22,15 +57,36 @@ export const ApplicationViews = () => {
         path="/"
         element={
           <>
-            <NavBar currentUser={currentUser} />
+            <NavBar currentDriver={currentDriver} />
             <Outlet />
           </>
         }
       >
-        <Route index element={<Welcome currentUser={currentUser} />} />
-        <Route path="/schedule" element={<Schedule currentUser={currentUser} />} />
-        <Route path="/rides" element={<Rides currentUser={currentUser} />} />
-        <Route path="/account" element={<Account currentUser={currentUser} />} />
+        <Route index element={<Welcome currentDriver={currentDriver} />} />
+        <Route
+          path="/schedule"
+          element={<Schedule currentDriver={currentDriver} />}
+        />
+        <Route
+          path="/rides"
+          element={
+            <Rides
+              currentDriver={currentDriver}
+              userDrivers={userDrivers}
+              userRiders={userRiders}
+            />
+          }
+        />
+        <Route
+          path="/account"
+          element={
+            <Account
+              currentDriver={currentDriver}
+              userDrivers={userDrivers}
+              userRiders={userRiders}
+            />
+          }
+        />
       </Route>
     </Routes>
   );
