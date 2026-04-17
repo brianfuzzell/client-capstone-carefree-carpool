@@ -18,10 +18,10 @@ import { getAllRiders } from "../../services/riderService";
 export const Account = ({ currentDriver, userDrivers, userRiders }) => {
   const [allUsers, setAllUsers] = useState([]);
   const [user, setUser] = useState({});
-  const [driver, setDriver] = useState({});
-  const [rider, setRider] = useState({});
   const [allRiders, setAllRiders] = useState([]);
   const [allDrivers, setAllDrivers] = useState([]);
+  const [phone, setPhone] = useState(currentDriver.phone);
+  const [email, setEmail] = useState(currentDriver.email);
 
   useEffect(() => {
     getAllUsers().then((usersArray) => {
@@ -48,30 +48,32 @@ export const Account = ({ currentDriver, userDrivers, userRiders }) => {
     });
   }, [currentDriver]);
 
+  useEffect(() => {
+    setPhone(currentDriver.phone || "")
+    setEmail(currentDriver.email || "")
+  }, [currentDriver])
+
   const handleSave = (event) => {
     event.preventDefault();
 
     const editedDriver = {
-      id: driver.id,
-      fullName: driver.fullName,
-      phone: driver.phone,
-      userId: driver.userId,
+      ...currentDriver,
+      phone: phone,
+      email: email,
     };
 
-    updateDriver(editedDriver);
+    updateDriver(editedDriver).then(() => {
+      localStorage.setItem("carpool_driver", JSON.stringify(editedDriver));
+    });
   };
 
   const handlePhoneChange = (event) => {
-    const stateCopy = { ...driver }
-    stateCopy[event.target.name] = event.target.name
-    setDriver(stateCopy)
-  }
+    setPhone(event.target.value);
+  };
 
   const handleEmailChange = (event) => {
-    const stateCopy = { ...user }
-    stateCopy[event.target.name] = event.target.name
-    setUser(stateCopy)
-  }
+    setEmail(event.target.value);
+  };
 
   const driversInAccount = userDrivers
     .map((driver) => driver.fullName)
@@ -80,7 +82,7 @@ export const Account = ({ currentDriver, userDrivers, userRiders }) => {
   const ridersInAccount = userRiders.map((rider) => rider.fullName).join(", ");
 
   return (
-    <Form>
+    <Form onSubmit={handleSave}>
       <div>
         <h2>Account</h2>
       </div>
@@ -99,7 +101,13 @@ export const Account = ({ currentDriver, userDrivers, userRiders }) => {
           Phone
         </Form.Label>
         <Col sm={10}>
-          <Form.Control type="tel" placeholder={currentDriver.phone} name="phone" value={currentDriver.phone ? currentDriver.phone : ''} onChange={handlePhoneChange} />
+          <Form.Control
+            type="tel"
+            placeholder={currentDriver.phone}
+            name="phone"
+            value={phone ? phone : ""}
+            onChange={handlePhoneChange}
+          />
         </Col>
       </Form.Group>
 
@@ -108,7 +116,13 @@ export const Account = ({ currentDriver, userDrivers, userRiders }) => {
           Email
         </Form.Label>
         <Col sm={10}>
-          <Form.Control type="email" placeholder={currentDriver.email} name="email" value={currentDriver.email ? currentDriver.email : ''} onChange={handleEmailChange} />
+          <Form.Control
+            type="email"
+            placeholder={currentDriver.email}
+            name="email"
+            value={email ? email : ""}
+            onChange={handleEmailChange}
+          />
         </Col>
       </Form.Group>
 

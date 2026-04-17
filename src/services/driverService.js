@@ -13,13 +13,13 @@ export const getDriverByEmail = (email) => {
 };
 
 export const updateDriver = (driver) => {
-  return fetch(`http://localhost:8088/drivers/${id}`, {
+  return fetch(`http://localhost:8088/drivers/${driver.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(driver),
-  });
+  }).then((res) => res.json());
 };
 
 export const createDriver = (user) => {
