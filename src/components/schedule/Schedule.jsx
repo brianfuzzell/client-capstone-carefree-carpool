@@ -6,7 +6,7 @@ import {
 import Accordion from "react-bootstrap/Accordion";
 import { getAllRiders } from "../../services/riderService";
 
-export const Schedule = ({ currentUser }) => {
+export const Schedule = ({ currentDriver }) => {
   const [allShifts, setAllShifts] = useState([]);
   const [shiftsWithDetails, setShiftsWithDetails] = useState([]);
   const [allRiders, setAllRiders] = useState([]);

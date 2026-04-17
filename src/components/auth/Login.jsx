@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
-import { getUserByEmail } from "../../services/userService.js"
+import { getDriverByEmail } from "../../services/driverService" 
 
 export const Login = () => {
   const [email, set] = useState("mmmdonuts@yahoo.com")
@@ -10,11 +10,11 @@ export const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault()
 
-    getUserByEmail(email).then((foundUsers) => {
+    getDriverByEmail(email).then((foundUsers) => {
       if (foundUsers.length === 1) {
         const user = foundUsers[0]
         localStorage.setItem(
-          "carpool_user",
+          "carpool_driver",
           JSON.stringify({
             id: user.id,
           })

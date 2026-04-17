@@ -1,6 +1,6 @@
 
 
-export const Rides = ({ currentUser, userDrivers, userRiders }) => {
+export const Rides = ({ currentDriver, userDrivers, userRiders }) => {
 
     return (
         <Container>

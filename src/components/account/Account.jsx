@@ -15,7 +15,7 @@ import {
 } from "../../services/driverService";
 import { getAllRiders } from "../../services/riderService";
 
-export const Account = ({ currentUser, userDrivers, userRiders }) => {
+export const Account = ({ currentDriver, userDrivers, userRiders }) => {
   const [allUsers, setAllUsers] = useState([]);
   const [user, setUser] = useState({});
   const [driver, setDriver] = useState({});
@@ -42,11 +42,11 @@ export const Account = ({ currentUser, userDrivers, userRiders }) => {
   }, []);
 
   useEffect(() => {
-    getUserById(currentUser.id).then((data) => {
+    getUserById(currentDriver.id).then((data) => {
       const userObj = data[0];
       setUser(userObj);
     });
-  }, [currentUser]);
+  }, [currentDriver]);
 
   const handleSave = (event) => {
     event.preventDefault();
@@ -99,7 +99,7 @@ export const Account = ({ currentUser, userDrivers, userRiders }) => {
           Phone
         </Form.Label>
         <Col sm={10}>
-          <Form.Control type="tel" placeholder={userDrivers.phone} name="phone" value={userDrivers.phone ? userDrivers.phone : ''} onChange={handlePhoneChange} />
+          <Form.Control type="tel" placeholder={currentDriver.phone} name="phone" value={currentDriver.phone ? currentDriver.phone : ''} onChange={handlePhoneChange} />
         </Col>
       </Form.Group>
 
@@ -108,7 +108,7 @@ export const Account = ({ currentUser, userDrivers, userRiders }) => {
           Email
         </Form.Label>
         <Col sm={10}>
-          <Form.Control type="email" placeholder={user.email} name="email" value={user.email ? user.email : ''} onChange={handleEmailChange} />
+          <Form.Control type="email" placeholder={currentDriver.email} name="email" value={currentDriver.email ? currentDriver.email : ''} onChange={handleEmailChange} />
         </Col>
       </Form.Group>
 
