@@ -1,3 +1,3 @@
 "use client";
-import { t as Navbar_default } from "./Navbar-B-Sbr79A.js";
+import { t as Navbar_default } from "./Navbar-BnVI9rAs.js";
 export { Navbar_default as default };
