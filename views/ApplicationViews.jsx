@@ -9,8 +9,8 @@ import { getUserDrivers, getUserRiders } from "../src/services/userService";
 
 export const ApplicationViews = () => {
   const [currentDriver, setCurrentDriver] = useState({});
-  const [userDrivers, setUserDrivers] = useState([]) 
-  const [userRiders, setUserRiders] = useState([])
+  const [userDrivers, setUserDrivers] = useState([]);
+  const [userRiders, setUserRiders] = useState([]);
 
   useEffect(() => {
     const localCarpoolDriver = localStorage.getItem("carpool_driver");
@@ -21,29 +21,35 @@ export const ApplicationViews = () => {
 
   useEffect(() => {
     if (currentDriver.id) {
-    getUserDrivers().then((usersArray) => {
-      const foundUser = usersArray.find(
-        (user) => user.id === currentDriver.id
-      )
-      const drivers = foundUser?.drivers || []
-      
-      setUserDrivers(drivers)
-    })
-  }
-  }, [currentDriver.id])
+      console.log("currentDriver:", currentDriver);
+      console.log("Looking for userId:", currentDriver.userId);
 
-    useEffect(() => {
+      getUserDrivers().then((usersArray) => {
+        console.log("usersArray:", usersArray);
+        const foundUser = usersArray.find(
+          (user) => user.id === currentDriver.userId,
+        );
+        console.log("foundUser:", foundUser);
+
+        const drivers = foundUser?.drivers || [];
+
+        setUserDrivers(drivers);
+      });
+    }
+  }, [currentDriver.id]);
+
+  useEffect(() => {
     if (currentDriver.id) {
-    getUserRiders().then((usersArray) => {
-      const foundUser = usersArray.find(
-        (user) => user.id === currentDriver.id
-      )
-      const riders = foundUser?.riders || []
-      
-      setUserRiders(riders)
-    })
-  }
-  }, [currentDriver.id])
+      getUserRiders().then((usersArray) => {
+        const foundUser = usersArray.find(
+          (user) => user.id === currentDriver.userId,
+        );
+        const riders = foundUser?.riders || [];
+
+        setUserRiders(riders);
+      });
+    }
+  }, [currentDriver.id]);
 
   return (
     <Routes>
@@ -57,9 +63,30 @@ export const ApplicationViews = () => {
         }
       >
         <Route index element={<Welcome currentDriver={currentDriver} />} />
-        <Route path="/schedule" element={<Schedule currentDriver={currentDriver} />} />
-        <Route path="/rides" element={<Rides currentDriver={currentDriver} userDrivers={userDrivers} userRiders={userRiders} />} />
-        <Route path="/account" element={<Account currentDriver={currentDriver} userDrivers={userDrivers} userRiders={userRiders} />} />
+        <Route
+          path="/schedule"
+          element={<Schedule currentDriver={currentDriver} />}
+        />
+        <Route
+          path="/rides"
+          element={
+            <Rides
+              currentDriver={currentDriver}
+              userDrivers={userDrivers}
+              userRiders={userRiders}
+            />
+          }
+        />
+        <Route
+          path="/account"
+          element={
+            <Account
+              currentDriver={currentDriver}
+              userDrivers={userDrivers}
+              userRiders={userRiders}
+            />
+          }
+        />
       </Route>
     </Routes>
   );

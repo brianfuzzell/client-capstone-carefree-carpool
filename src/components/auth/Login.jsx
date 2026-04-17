@@ -17,6 +17,10 @@ export const Login = () => {
           "carpool_driver",
           JSON.stringify({
             id: user.id,
+            userId: user.userId,
+            fullName: user.fullName,
+            email: user.email,
+            phone: user.phone
           })
         )
 
