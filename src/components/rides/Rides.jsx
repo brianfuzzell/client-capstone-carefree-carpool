@@ -1,14 +1,10 @@
 import { useEffect, useState } from "react";
-import {
-  getAllShifts,
-  getShiftsByDriverAndRiderShifts,
-} from "../../services/shiftService";
+import { getShiftsByDriverAndRiderShifts } from "../../services/shiftService";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { getAllRiders } from "../../services/riderService";
-import { getUserById } from "../../services/userService";
 
-export const Rides = ({ currentDriver, userDrivers, userRiders }) => {
+export const Rides = ({ currentDriver }) => {
   const [allRiders, setAllRiders] = useState([]);
   const [shiftsWithDetails, setShiftsWithDetails] = useState([]);
   const [myShifts, setMyShifts] = useState([]);
@@ -36,12 +32,6 @@ export const Rides = ({ currentDriver, userDrivers, userRiders }) => {
     }
   }, [currentDriver.id]);
 
-  {
-    /* Rides cards go here. Need conditional logic:
-            - All Rides cards display in sequential date order
-            - Rides that other users created are inactive
-            - Rides that the current user created are active and editable */
-  }
   return (
     <Form>
       {myShifts.map((shift) => {
