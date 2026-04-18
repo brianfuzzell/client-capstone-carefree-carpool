@@ -228,7 +228,7 @@ export const Account = ({ currentDriver, userDrivers, userRiders }) => {
 
       <Form.Group as={Row} className="mb-3">
         <Col sm={{ span: 10, offset: 2 }}>
-          <Button variant="secondary" type="submit" onClick={handleAddDriver}>
+          <Button variant="outline-secondary" type="submit" onClick={handleAddDriver}>
             Add Driver
           </Button>
         </Col>
@@ -255,7 +255,7 @@ export const Account = ({ currentDriver, userDrivers, userRiders }) => {
 
       <Form.Group as={Row} className="mb-3">
         <Col sm={{ span: 10, offset: 2 }}>
-          <Button variant="secondary" type="submit" onClick={handleAddRider}>
+          <Button variant="outline-secondary" type="submit" onClick={handleAddRider}>
             Add Rider
           </Button>
         </Col>
