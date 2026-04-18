@@ -1,92 +1,95 @@
+import { useEffect, useState } from "react";
+import { getShiftsByDriverAndRiderShifts } from "../../services/shiftService";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import { getAllRiders } from "../../services/riderService";
 
+export const Rides = ({ currentDriver }) => {
+  const [allRiders, setAllRiders] = useState([]);
+  const [shiftsWithDetails, setShiftsWithDetails] = useState([]);
+  const [myShifts, setMyShifts] = useState([]);
 
-export const Rides = ({ currentDriver, userDrivers, userRiders }) => {
+  useEffect(() => {
+    getAllRiders().then((ridersArray) => {
+      setAllRiders(ridersArray);
+    });
+  }, []);
 
-    return (
-        <Container>
-      <Row>
-        <Col>
-          <h2>Rides</h2>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-        {/* Rides cards go here. Need conditional logic:
-            - All Rides cards display in sequential date order
-            - Rides that other users created are inactive
-            - Rides that the current user created are active and editable */}
-          <Form>
-            <div>{user.familyName}</div>
-            <Form.Group
-              as={Row}
-              className="mb-3"
-              controlId="formHorizontalEmail"
-            >
-              <Form.Label column sm={2}>
-                Email
-              </Form.Label>
-              <Col sm={10}>
-                <Form.Control type="email" placeholder="Email" />
-              </Col>
-            </Form.Group>
+  useEffect(() => {
+    getShiftsByDriverAndRiderShifts().then((shiftsArray) => {
+      setShiftsWithDetails(shiftsArray);
+    });
+  }, []);
 
-            <Form.Group
-              as={Row}
-              className="mb-3"
-              controlId="formHorizontalPassword"
-            >
-              <Form.Label column sm={2}>
-                Password
-              </Form.Label>
-              <Col sm={10}>
-                <Form.Control type="password" placeholder="Password" />
-              </Col>
-            </Form.Group>
-            <fieldset>
-              <Form.Group as={Row} className="mb-3">
-                <Form.Label as="legend" column sm={2}>
-                  Radios
-                </Form.Label>
-                <Col sm={10}>
+  useEffect(() => {
+    if (currentDriver.id) {
+      getShiftsByDriverAndRiderShifts().then((shiftsArray) => {
+        const filtered = shiftsArray.filter(
+          (shift) => shift.driverId === currentDriver.id,
+        );
+        setMyShifts(filtered);
+      });
+    }
+  }, [currentDriver.id]);
+
+  return (
+    <Form>
+      {myShifts.map((shift) => {
+        const date = new Date(shift.date);
+        const formattedDate = date.toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+        });
+        const riderIds = shift.riderShifts.map(
+          (riderShift) => riderShift.riderId,
+        );
+        const ridersOnThisShift = allRiders.filter((rider) =>
+          riderIds.includes(rider.id),
+        );
+
+        return (
+          <div key={shift.id}>
+            <Form.Group className="mb-3">
+              <div>
+                <h5>{formattedDate}</h5>
+                <p>{shift.morning ? "Morning" : "Afternoon"}</p>
+              </div>
+              <div>
+                <div>
+                  <strong>Driver: </strong>
+                  {shift.driver.fullName}
+                </div>
+              </div>
+              <Form.Label><strong>Riders:</strong> </Form.Label>
+
+              {allRiders.map((rider) => {
+                const isOnThisShift = ridersOnThisShift.some(
+                  (riderInShift) => riderInShift.id === rider.id,
+                );
+
+                return (
                   <Form.Check
-                    type="radio"
-                    label="first radio"
-                    name="formHorizontalRadios"
-                    id="formHorizontalRadios1"
+                    key={rider.id}
+                    type="checkbox"
+                    label={rider.fullName}
+                    checked={isOnThisShift}
+                    disabled
+                    inline
                   />
-                  <Form.Check
-                    type="radio"
-                    label="second radio"
-                    name="formHorizontalRadios"
-                    id="formHorizontalRadios2"
-                  />
-                  <Form.Check
-                    type="radio"
-                    label="third radio"
-                    name="formHorizontalRadios"
-                    id="formHorizontalRadios3"
-                  />
-                </Col>
-              </Form.Group>
-            </fieldset>
-            <Form.Group
-              as={Row}
-              className="mb-3"
-              controlId="formHorizontalCheck"
-            >
-              <Col sm={{ span: 10, offset: 2 }}>
-                <Form.Check label="Remember me" />
-              </Col>
+                );
+              })}
             </Form.Group>
 
-            <Form.Group as={Row} className="mb-3">
-              <Col sm={{ span: 10, offset: 2 }}>
-                <Button type="submit">Sign in</Button>
-              </Col>
-            </Form.Group>
-          </Form>
-        </Col>
-      </Row>
-    </Container>
-    )
-}
+            <Button variant="primary" type="submit">
+              Edit {/* triggers an "edit" state to toggle local state */}
+            </Button>
+            <Button variant="danger" type="submit">
+              Delete
+            </Button>
+            {/* //onClick={handleDelete}   */}
+          </div>
+        );
+      })}
+    </Form>
+  );
+};
