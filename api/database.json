@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "familyName": "Simpsons"
+      "familyName": "Simpson"
     },
     {
       "id": 2,
@@ -35,10 +35,10 @@
     },
     {
       "id": 2,
+      "userId": 1,
       "fullName": "Homer Simpson",
-      "phone": "555-555-5552",
       "email": "mmmdonuts@yahoo.com",
-      "userId": 1
+      "phone": "555-555-0591"
     },
     {
       "id": 3,
@@ -51,14 +51,14 @@
       "id": 4,
       "fullName": "Sarah Wiggum",
       "phone": "555-555-5500",
-      "email": "thewiggums@netscape.net",
+      "email": "sarahwiggum@netscape.net",
       "userId": 3
     },
     {
       "id": 5,
       "fullName": "Chief Wiggum",
       "phone": "555-555-5100",
-      "email": "thewiggums@netscape.net",
+      "email": "chiefwiggum@netscape.net",
       "userId": 3
     },
     {
@@ -72,7 +72,7 @@
       "id": 7,
       "fullName": "Kirk Van Houten",
       "phone": "555-555-5456",
-      "email": "vanhoutenfamily@aol.com",
+      "email": "kvanhouten@aol.com",
       "userId": 4
     },
     {
@@ -93,14 +93,14 @@
       "id": 10,
       "fullName": "Reverend Lovejoy",
       "phone": "555-555-5777",
-      "email": "thelovejoys@netscape.net",
+      "email": "revlovejoy@netscape.net",
       "userId": 6
     },
     {
       "id": 11,
       "fullName": "Helen Lovejoy",
       "phone": "555-555-5710",
-      "email": "thelovejoys@netscape.net",
+      "email": "helenlovejoy@netscape.net",
       "userId": 6
     }
   ],

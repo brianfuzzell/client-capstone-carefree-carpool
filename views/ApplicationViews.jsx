@@ -21,15 +21,10 @@ export const ApplicationViews = () => {
 
   useEffect(() => {
     if (currentDriver.id) {
-      console.log("currentDriver:", currentDriver);
-      console.log("Looking for userId:", currentDriver.userId);
-
       getUserDrivers().then((usersArray) => {
-        console.log("usersArray:", usersArray);
         const foundUser = usersArray.find(
           (user) => user.id === currentDriver.userId,
         );
-        console.log("foundUser:", foundUser);
 
         const drivers = foundUser?.drivers || [];
 
