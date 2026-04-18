@@ -22,12 +22,15 @@ export const updateDriver = (driver) => {
   }).then((res) => res.json());
 };
 
-export const createDriver = (user) => {
-  return fetch("http://localhost:8088/drivers", {
+export const createDriver = async (driver) => {
+  const postOptions = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(user),
-  }).then((res) => res.json());
+    body: JSON.stringify(driver),
+  };
+  return fetch("http://localhost:8088/drivers", postOptions).then((res) =>
+    res.json(),
+  );
 };
