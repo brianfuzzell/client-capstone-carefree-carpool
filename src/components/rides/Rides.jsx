@@ -1,28 +1,21 @@
 import { useEffect, useState } from "react";
-import { getShiftsByDriverAndRiderShifts } from "../../services/shiftService";
+import {
+  getShiftsByDriverAndRiderShifts,
+  deleteShift,
+} from "../../services/shiftService";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { getAllRiders } from "../../services/riderService";
 
 export const Rides = ({ currentDriver }) => {
   const [allRiders, setAllRiders] = useState([]);
-  const [shiftsWithDetails, setShiftsWithDetails] = useState([]);
   const [myShifts, setMyShifts] = useState([]);
 
-  useEffect(() => {
-    getAllRiders().then((ridersArray) => {
-      setAllRiders(ridersArray);
-    });
-  }, []);
-
-  useEffect(() => {
-    getShiftsByDriverAndRiderShifts().then((shiftsArray) => {
-      setShiftsWithDetails(shiftsArray);
-    });
-  }, []);
 
   useEffect(() => {
     if (currentDriver.id) {
+      getAllRiders().then(setAllRiders)
+
       getShiftsByDriverAndRiderShifts().then((shiftsArray) => {
         const filtered = shiftsArray.filter(
           (shift) => shift.driverId === currentDriver.id,
@@ -31,6 +24,17 @@ export const Rides = ({ currentDriver }) => {
       });
     }
   }, [currentDriver.id]);
+
+  const handleDelete = (shiftId) => {
+    deleteShift(shiftId).then(() => {
+      getShiftsByDriverAndRiderShifts().then((shiftsArray) => {
+        const filtered = shiftsArray.filter(
+          (shift) => shift.driverId === currentDriver.id,
+        );
+        setMyShifts(filtered);
+      });
+    });
+  };
 
   return (
     <Form>
@@ -60,7 +64,9 @@ export const Rides = ({ currentDriver }) => {
                   {shift.driver.fullName}
                 </div>
               </div>
-              <Form.Label><strong>Riders:</strong> </Form.Label>
+              <Form.Label>
+                <strong>Riders:</strong>
+              </Form.Label>
 
               {allRiders.map((rider) => {
                 const isOnThisShift = ridersOnThisShift.some(
@@ -80,13 +86,16 @@ export const Rides = ({ currentDriver }) => {
               })}
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="button">
               Edit {/* triggers an "edit" state to toggle local state */}
             </Button>
-            <Button variant="danger" type="submit">
+            <Button
+              variant="danger"
+              type="button"
+              onClick={() => handleDelete(shift.id)}
+            >
               Delete
             </Button>
-            {/* //onClick={handleDelete}   */}
           </div>
         );
       })}
