@@ -7,3 +7,9 @@ export const getShiftsByDriverAndRiderShifts = () => {
     (res) => res.json(),
   );
 };
+
+export const deleteShift = (shiftId) => {
+  return fetch(`http://localhost:8088/shifts/${shiftId}`, {
+    method: "DELETE"
+  })
+}
