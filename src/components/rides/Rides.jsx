@@ -65,7 +65,7 @@ export const Rides = ({ currentDriver }) => {
                 </div>
               </div>
               <Form.Label>
-                <strong>Riders:</strong>{" "}
+                <strong>Riders:</strong>
               </Form.Label>
 
               {allRiders.map((rider) => {
