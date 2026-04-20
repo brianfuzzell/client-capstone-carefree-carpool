@@ -8,6 +8,16 @@ export const getShiftsByDriverAndRiderShifts = () => {
   );
 };
 
+export const editShift = (shiftObject) => {
+  return fetch(`http://localhost:8088/shifts/${shiftObject.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(shiftObject)
+  })
+}
+
 export const deleteShift = (shiftId) => {
   return fetch(`http://localhost:8088/shifts/${shiftId}`, {
     method: "DELETE"

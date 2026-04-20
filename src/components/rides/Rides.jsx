@@ -2,19 +2,32 @@ import { useEffect, useState } from "react";
 import {
   getShiftsByDriverAndRiderShifts,
   deleteShift,
+  editShift,
 } from "../../services/shiftService";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { getAllRiders } from "../../services/riderService";
+import { Modal } from "react-bootstrap";
 
 export const Rides = ({ currentDriver }) => {
   const [allRiders, setAllRiders] = useState([]);
   const [myShifts, setMyShifts] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [editingShift, setEditingShift] = useState(null);
 
-
+  const formattedDate = (dateString) => {
+    const [year, month, day] = dateString.split("-");
+  
+    const monthNames = [
+      "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December",
+    ];
+        
+    return `${monthNames[parseInt(month) - 1]} ${parseInt(day)}, ${parseInt(year)}`;
+  }
+  
   useEffect(() => {
     if (currentDriver.id) {
-      getAllRiders().then(setAllRiders)
+      getAllRiders().then(setAllRiders);
 
       getShiftsByDriverAndRiderShifts().then((shiftsArray) => {
         const filtered = shiftsArray.filter(
@@ -24,6 +37,35 @@ export const Rides = ({ currentDriver }) => {
       });
     }
   }, [currentDriver.id]);
+
+  const handleEdit = (shift) => {
+    const editedRide = {
+      id: shift.id,
+      date: shift.date,
+      morning: shift.morning,
+      afternoon: shift.afternoon,
+      driverId: shift.driverId,
+    };
+
+    editShift(editedRide).then(() => {
+      getShiftsByDriverAndRiderShifts().then((shiftsArray) => {
+        const filtered = shiftsArray.filter(
+          (shift) => shift.driverId === currentDriver.id,
+        );
+        setMyShifts(filtered);
+      });
+    });
+  };
+
+  const handleOpenModal = (shift) => {
+    setEditingShift(shift);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setEditingShift(null);
+  };
 
   const handleDelete = (shiftId) => {
     deleteShift(shiftId).then(() => {
@@ -39,11 +81,7 @@ export const Rides = ({ currentDriver }) => {
   return (
     <Form>
       {myShifts.map((shift) => {
-        const date = new Date(shift.date);
-        const formattedDate = date.toLocaleDateString("en-US", {
-          month: "long",
-          day: "numeric",
-        });
+        
         const riderIds = shift.riderShifts.map(
           (riderShift) => riderShift.riderId,
         );
@@ -86,8 +124,12 @@ export const Rides = ({ currentDriver }) => {
               })}
             </Form.Group>
 
-            <Button variant="primary" type="button">
-              Edit {/* triggers an "edit" state to toggle local state */}
+            <Button
+              variant="primary"
+              type="button"
+              onClick={() => handleOpenModal(shift)}
+            >
+              Edit
             </Button>
             <Button
               variant="danger"
@@ -99,6 +141,38 @@ export const Rides = ({ currentDriver }) => {
           </div>
         );
       })}
+      <Modal
+        show={showModal}
+        onHide={handleCloseModal}
+        backdrop="static"
+        keyboard={false}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Edit Ride
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          
+          {editingShift && (
+            
+             <>
+             <h5>{formattedDate(editingShift.date)}</h5>
+              <p>{editingShift.morning ? "Morning" : "Afternoon"}</p>
+              <p>
+                Form to edit goes here
+              </p>
+              </>
+            )}
+         
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={() => handleEdit(editingShift)}>Save Changes</Button>
+        </Modal.Footer>
+      </Modal>
     </Form>
   );
 };
