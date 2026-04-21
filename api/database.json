@@ -155,13 +155,6 @@
       "driverId": 1
     },
     {
-      "id": 2,
-      "date": "2026-04-20",
-      "morning": false,
-      "afternoon": true,
-      "driverId": 3
-    },
-    {
       "id": 3,
       "date": "2026-04-21",
       "morning": true,
@@ -205,21 +198,6 @@
       "id": 3,
       "riderId": 5,
       "shiftId": 1
-    },
-    {
-      "id": 4,
-      "riderId": 3,
-      "shiftId": 2
-    },
-    {
-      "id": 5,
-      "riderId": 4,
-      "shiftId": 2
-    },
-    {
-      "id": 6,
-      "riderId": 7,
-      "shiftId": 2
     },
     {
       "id": 7,
