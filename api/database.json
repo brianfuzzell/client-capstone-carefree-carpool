@@ -195,6 +195,13 @@
       "afternoon": false,
       "driverId": 1,
       "id": 8
+    },
+    {
+      "date": "2026-04-23",
+      "morning": true,
+      "afternoon": false,
+      "driverId": 2,
+      "id": 9
     }
   ],
   "riderShifts": [
@@ -342,6 +349,36 @@
       "riderId": 8,
       "shiftId": 8,
       "id": 36
+    },
+    {
+      "riderId": 7,
+      "shiftId": 9,
+      "id": 37
+    },
+    {
+      "riderId": 4,
+      "shiftId": 9,
+      "id": 38
+    },
+    {
+      "riderId": 3,
+      "shiftId": 9,
+      "id": 39
+    },
+    {
+      "riderId": 1,
+      "shiftId": 9,
+      "id": 40
+    },
+    {
+      "riderId": 5,
+      "shiftId": 9,
+      "id": 41
+    },
+    {
+      "riderId": 2,
+      "shiftId": 9,
+      "id": 42
     }
   ]
 }
