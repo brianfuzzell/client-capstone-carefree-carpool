@@ -56,6 +56,20 @@ export const Rides = ({ currentDriver }) => {
         const filtered = shiftsArray.filter(
           (shift) => shift.driverId === currentDriver.id,
         );
+
+        const sorted = filtered.sort((a, b) => {
+          if (a.date < b.date) return -1
+          if (a.date > b.date) return 1
+          if (a.date === b.date) {
+            if (a.morning && b.afternoon) {
+              return -1
+            }
+            if (a.afternoon && b.morning) {
+              return 1
+            }
+          }
+        })
+
         setMyShifts(filtered);
       });
     }
