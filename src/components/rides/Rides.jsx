@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { getAllRiders } from "../../services/riderService";
+import {
+  createRiderShift,
+  deleteRiderShift,
+  getAllRiders,
+} from "../../services/riderService";
 import { getUserDrivers } from "../../services/userService";
 import {
   getShiftsByDriverAndRiderShifts,
@@ -16,9 +20,6 @@ export const Rides = ({ currentDriver }) => {
   const [myShifts, setMyShifts] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [editingShift, setEditingShift] = useState(null);
-  const [currentShiftDriver, setCurrentShiftDriver] = useState(
-    currentDriver.fullName,
-  );
   const [editDate, setEditDate] = useState("");
   const [editMorning, setEditMorning] = useState(false);
   const [editAfternoon, setEditAfternoon] = useState(false);
@@ -79,7 +80,35 @@ export const Rides = ({ currentDriver }) => {
     }
   }, [currentDriver.id]);
 
-  const handleEdit = (shift) => {
+  const handleEdit = () => {
+    const originalRiderIds = editingShift.riderShifts.map(
+      (riderShift) => riderShift.riderId,
+    );
+
+    const ridersToRemove = editingShift.riderShifts.filter(
+      (riderShift) => !editRiderIds.includes(riderShift.riderId),
+    );
+
+    console.log("Riders to remove", ridersToRemove);
+
+    const ridersToAdd = editRiderIds.filter(
+      (riderId) => !originalRiderIds.includes(riderId),
+    );
+
+    console.log("Riders to add", ridersToAdd);
+
+    const deletePromises = ridersToRemove.map((riderShift) =>
+      deleteRiderShift(riderShift.id),
+    );
+
+    const addPromises = ridersToAdd.map((riderId) => {
+      const newRiderShift = {
+        riderId: riderId,
+        shiftId: editingShift.id,
+      };
+      return createRiderShift(newRiderShift);
+    });
+
     const editedRide = {
       id: editingShift.id,
       date: editDate,
@@ -88,25 +117,23 @@ export const Rides = ({ currentDriver }) => {
       driverId: editDriverId,
     };
 
-    const originalRiderIds = editingShift.riderShifts.map(
-      riderShift => riderShift.riderId)
-    
-    const ridersToRemove = editingShift.riderShifts.filter(
-      riderShift => !editRiderIds.includes(riderShift.riderId)
-    )
-
-    const ridersToAdd = editRiderIds.filter(
-      riderId => !originalRiderIds.includes(riderId)
-    )
-
-    editShift(editedRide).then(() => {
-      getShiftsByDriverAndRiderShifts().then((shiftsArray) => {
+    Promise.all(deletePromises)
+      .then(() => {
+        return Promise.all(addPromises);
+      })
+      .then(() => {
+        return editShift(editedRide);
+      })
+      .then(() => {
+        return getShiftsByDriverAndRiderShifts();
+      })
+      .then((shiftsArray) => {
         const filtered = shiftsArray.filter(
           (shift) => shift.driverId === currentDriver.id,
         );
         setMyShifts(filtered);
+        handleCloseModal();
       });
-    });
   };
 
   const handleOpenModal = (shift) => {
@@ -141,14 +168,6 @@ export const Rides = ({ currentDriver }) => {
     }
   };
 
-  const handleDateChange = (event) => {
-    setEditDate(event.target.value);
-  };
-
-  const handleDriverChange = (event) => {
-    setNewDriverName(event.target.value);
-  };
-
   return (
     <Form>
       {myShifts.map((shift) => {
@@ -161,6 +180,7 @@ export const Rides = ({ currentDriver }) => {
 
         return (
           <div key={shift.id}>
+            <h2>Rides</h2>
             <Form.Group className="mb-3">
               <div>
                 <h5>{formattedDate(shift.date)}</h5>
@@ -227,13 +247,7 @@ export const Rides = ({ currentDriver }) => {
         <Modal.Body>
           {editingShift &&
             (() => {
-              const riderIds = editingShift.riderShifts.map(
-                (riderShift) => riderShift.riderId,
-              );
-              const ridersOnThisShift = allRiders.filter((rider) =>
-                riderIds.includes(rider.id),
-              );
-
+          
               return (
                 <>
                   <div className="mb-3">
@@ -272,7 +286,7 @@ export const Rides = ({ currentDriver }) => {
                       />
                     </div>
 
-                    <Form.Label >
+                    <Form.Label>
                       <strong>Driver</strong>
                     </Form.Label>
                     {userDrivers.map((driver) => (
@@ -289,12 +303,11 @@ export const Rides = ({ currentDriver }) => {
                       />
                     ))}
                   </div>
-                  <Form.Label >
+                  <Form.Label>
                     <strong>Riders:</strong>
                   </Form.Label>
                   {allRiders.map((rider) => {
-                    const isSelected = editRiderIds.includes(rider.id)
-          
+                    const isSelected = editRiderIds.includes(rider.id);
 
                     return (
                       <Form.Check
@@ -305,9 +318,11 @@ export const Rides = ({ currentDriver }) => {
                         inline
                         onChange={() => {
                           if (isSelected) {
-                            setEditRiderIds(editRiderIds.filter(id => id !== rider.id))
+                            setEditRiderIds(
+                              editRiderIds.filter((id) => id !== rider.id),
+                            );
                           } else {
-                            setEditRiderIds([...editRiderIds, rider.id])
+                            setEditRiderIds([...editRiderIds, rider.id]);
                           }
                         }}
                       />
@@ -318,7 +333,7 @@ export const Rides = ({ currentDriver }) => {
             })()}
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={() => handleEdit(editingShift)}>Save Changes</Button>
+          <Button onClick={handleEdit}>Save Changes</Button>
         </Modal.Footer>
       </Modal>
     </Form>
