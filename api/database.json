@@ -144,6 +144,11 @@
       "id": 8,
       "fullName": "Jessica Lovejoy",
       "userId": 6
+    },
+    {
+      "fullName": "Maggie Simpson",
+      "userId": 1,
+      "id": 9
     }
   ],
   "shifts": [
