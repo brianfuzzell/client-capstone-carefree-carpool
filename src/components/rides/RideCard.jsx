@@ -14,10 +14,9 @@ import {
   editShift,
 } from "../../services/shiftService";
 
-export const RideCard = ({ currentDriver }) => {
+export const RideCard = ({ currentDriver, myShifts }) => {
   const [allRiders, setAllRiders] = useState([]);
   const [userDrivers, setUserDrivers] = useState([]);
-  const [myShifts, setMyShifts] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [editingShift, setEditingShift] = useState(null);
   const [editDate, setEditDate] = useState("");
@@ -66,19 +65,6 @@ export const RideCard = ({ currentDriver }) => {
       setAllRiders(ridersArray);
     });
   }, []);
-
-  useEffect(() => {
-    if (currentDriver.id) {
-      getAllRiders().then(setAllRiders);
-
-      getShiftsByDriverAndRiderShifts().then((shiftsArray) => {
-        const filtered = shiftsArray.filter(
-          (shift) => shift.driverId === currentDriver.id,
-        );
-        setMyShifts(filtered);
-      });
-    }
-  }, [currentDriver.id]);
 
   const handleEdit = () => {
     const originalRiderIds = editingShift.riderShifts.map(
