@@ -8,6 +8,19 @@ export const getShiftsByDriverAndRiderShifts = () => {
   );
 };
 
+export const createShift = (newShift) => {
+  const postOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newShift),
+  };
+  return fetch("http://localhost:8088/shifts", postOptions).then((res) =>
+    res.json(),
+  );
+};
+
 export const editShift = (shiftObject) => {
   return fetch(`http://localhost:8088/shifts/${shiftObject.id}`, {
     method: "PUT",

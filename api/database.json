@@ -181,6 +181,20 @@
       "morning": true,
       "afternoon": false,
       "driverId": 10
+    },
+    {
+      "date": "2026-04-24",
+      "morning": false,
+      "afternoon": true,
+      "driverId": 1,
+      "id": 7
+    },
+    {
+      "date": "2026-04-23",
+      "morning": true,
+      "afternoon": false,
+      "driverId": 1,
+      "id": 8
     }
   ],
   "riderShifts": [
@@ -293,6 +307,41 @@
       "riderId": 4,
       "shiftId": 1,
       "id": 29
+    },
+    {
+      "riderId": 1,
+      "shiftId": 7,
+      "id": 30
+    },
+    {
+      "riderId": 6,
+      "shiftId": 7,
+      "id": 31
+    },
+    {
+      "riderId": 7,
+      "shiftId": 7,
+      "id": 32
+    },
+    {
+      "riderId": 4,
+      "shiftId": 8,
+      "id": 33
+    },
+    {
+      "riderId": 3,
+      "shiftId": 8,
+      "id": 34
+    },
+    {
+      "riderId": 2,
+      "shiftId": 8,
+      "id": 35
+    },
+    {
+      "riderId": 8,
+      "shiftId": 8,
+      "id": 36
     }
   ]
 }
