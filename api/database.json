@@ -150,8 +150,8 @@
     {
       "id": 1,
       "date": "2026-04-20",
-      "morning": false,
-      "afternoon": true,
+      "morning": true,
+      "afternoon": false,
       "driverId": 1
     },
     {
@@ -278,6 +278,21 @@
       "riderId": 6,
       "shiftId": 1,
       "id": 26
+    },
+    {
+      "riderId": 1,
+      "shiftId": 1,
+      "id": 27
+    },
+    {
+      "riderId": 8,
+      "shiftId": 1,
+      "id": 28
+    },
+    {
+      "riderId": 4,
+      "shiftId": 1,
+      "id": 29
     }
   ]
 }
