@@ -42,17 +42,32 @@ export const Schedule = ({ currentDriver }) => {
           const ridersOnThisShift = allRiders.filter((rider) =>
             riderIds.includes(rider.id),
           );
-          const date = new Date(shift.date);
-          const formattedDate = date.toLocaleDateString("en-US", {
-            month: "long",
-            day: "numeric",
-          });
+          const formattedDate = (dateString) => {
+            const [year, month, day] = dateString.split("-");
+
+            const monthNames = [
+              "January",
+              "February",
+              "March",
+              "April",
+              "May",
+              "June",
+              "July",
+              "August",
+              "September",
+              "October",
+              "November",
+              "December",
+            ];
+
+            return `${monthNames[parseInt(month) - 1]} ${parseInt(day)}, ${parseInt(year)}`;
+          };
 
           return (
             <Accordion defaultActiveKey="0" key={shift.id}>
               <Accordion.Item eventKey={shift.id}>
                 <Accordion.Header>
-                  {formattedDate} {shift.morning ? "Morning" : "Afternoon"}
+                  {formattedDate(shift.date)} {shift.morning ? "Morning" : "Afternoon"}
                 </Accordion.Header>
                 <Accordion.Body>
                   <div>
