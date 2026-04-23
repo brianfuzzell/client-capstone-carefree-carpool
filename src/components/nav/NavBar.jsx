@@ -25,19 +25,20 @@ export const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/schedule">
+            <Nav.Link className="nav-link" as={Link} to="/schedule">
               Schedule
             </Nav.Link>
-            <Nav.Link as={Link} to="/rides">
+            <Nav.Link className="nav-link" as={Link} to="/rides">
               Rides
             </Nav.Link>
             <NavDropdown title="Settings" id="basic-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/account">
+              <NavDropdown.Item className="nav-link" as={Link} to="/account">
                 Account
               </NavDropdown.Item>
               {localStorage.getItem("carpool_driver") ? (
                 <NavDropdown.Item
                   as={Link}
+                  className="nav-link"
                   to="/login"
                   onClick={() => {
                     localStorage.removeItem("carpool_driver");
