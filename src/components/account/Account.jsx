@@ -16,7 +16,7 @@ import {
 } from "../../services/driverService";
 import { getAllRiders, createRider } from "../../services/riderService";
 
-export const Account = ({ currentDriver, userDrivers, userRiders }) => {
+export const Account = ({ currentDriver, userDrivers, userRiders, refetchUserData }) => {
   const [allUsers, setAllUsers] = useState([]);
   const [user, setUser] = useState({});
   const [allRiders, setAllRiders] = useState([]);
@@ -99,6 +99,7 @@ export const Account = ({ currentDriver, userDrivers, userRiders }) => {
     };
 
     createDriver(newDriver).then(() => {
+      refetchUserData()
       setNewDriverName("");
       setNewDriverPhone("");
       setNewDriverEmail("");
@@ -115,6 +116,7 @@ export const Account = ({ currentDriver, userDrivers, userRiders }) => {
     };
 
     createRider(newRider).then(() => {
+      refetchUserData()
       setNewRiderName("");
       window.alert("New rider added");
     });

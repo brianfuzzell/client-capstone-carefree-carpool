@@ -123,7 +123,7 @@ export const Rides = ({ currentDriver }) => {
         </Button>
       </div>
 
-      <RideCard currentDriver={currentDriver} myShifts={myShifts} />
+      <RideCard currentDriver={currentDriver} myShifts={myShifts} setMyShifts={setMyShifts} />
       <Modal
         show={showAddModal}
         onHide={handleCloseAddModal}
