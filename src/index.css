@@ -1,6 +1,6 @@
 :root {
   --text: #6b6375;
-  --text-h: #08060d;
+  --text-h: #f3f4f6;
   --bg: #fff;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
@@ -11,8 +11,9 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: Inter, system-ui, 'Segoe UI', Roboto, sans-serif;
+  --bs-font-sans-serif: var(--sans);
+  --heading: Arvo, system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -24,6 +25,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
 
   @media (max-width: 1024px) {
     font-size: 16px;
@@ -50,8 +52,9 @@
   }
 }
 
-body {
+body, p {
   margin: 0;
+  font-family: var(--sans);
 }
 
 #root {
@@ -66,14 +69,19 @@ body {
   box-sizing: border-box;
 }
 
-h1,
-h2 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading);
   font-weight: 500;
   color: var(--text-h);
 }
 
-h1 {
+h1 { font-size: 2.81rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.44rem; }
+h5 { font-size: 1.15rem; }
+h6 { font-size: 1rem; }
+/* h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
   margin: 32px 0;
@@ -90,10 +98,7 @@ h2 {
   @media (max-width: 1024px) {
     font-size: 20px;
   }
-}
-p {
-  margin: 0;
-}
+} */
 
 code,
 .counter {

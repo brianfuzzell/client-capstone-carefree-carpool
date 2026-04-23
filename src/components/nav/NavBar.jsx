@@ -11,7 +11,16 @@ export const NavBar = () => {
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand as={Link} to="/">
-          Carefree Carpool
+          <span
+          className="material-symbols-outlined"
+          style={{
+            fontSize: "42px",
+            color: "#7ba591",
+            fontVariationSettings: `'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48`,
+          }}
+        >
+          directions_car
+        </span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
