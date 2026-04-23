@@ -14,14 +14,7 @@ export const Rides = ({ currentDriver }) => {
   const [allRiders, setAllRiders] = useState([]);
   const [userDrivers, setUserDrivers] = useState([]);
   const [myShifts, setMyShifts] = useState([]);
-  const [showModal, setShowModal] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
-  const [editingShift, setEditingShift] = useState(null);
-  const [editDate, setEditDate] = useState("");
-  const [editMorning, setEditMorning] = useState(false);
-  const [editAfternoon, setEditAfternoon] = useState(false);
-  const [editDriverId, setEditDriverId] = useState(null);
-  const [editRiderIds, setEditRiderIds] = useState([]);
   const [newDate, setNewDate] = useState("");
   const [newMorning, setNewMorning] = useState(false);
   const [newAfternoon, setNewAfternoon] = useState(false);
@@ -70,7 +63,7 @@ export const Rides = ({ currentDriver }) => {
           }
         })
 
-        setMyShifts(filtered);
+        setMyShifts(sorted);
       });
     }
   }, [currentDriver.id]);

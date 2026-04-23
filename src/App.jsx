@@ -1,7 +1,7 @@
-import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import "./App.css";
+import "./index.css";
 import { Login } from "./components/auth/Login";
 import { Register } from "./components/auth/Register";
 import { Authorized } from "../views/Authorized";
