@@ -32,7 +32,7 @@ export const Login = () => {
   }
 
   return (
-    <main className="container-login">
+    <main className="container-login body-container">
       <section>
         <form className="form-login" onSubmit={handleLogin}>
           <h1>Carefree Carpool</h1>

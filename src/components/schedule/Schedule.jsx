@@ -43,7 +43,7 @@ export const Schedule = ({ currentDriver }) => {
   }, []);
 
   return (
-    <>
+    <div className="body-container">
       <div>
         <span
           className="material-symbols-outlined"
@@ -58,7 +58,6 @@ export const Schedule = ({ currentDriver }) => {
       </div>
       <h1>Carefree Carpool</h1>
       <div>Schedule rides with ease</div>
-      
       <h2>Schedule</h2>
       <h5>This Week at a Glance</h5>
 
@@ -156,6 +155,6 @@ export const Schedule = ({ currentDriver }) => {
             );
           })}
       </article>
-    </>
+    </div>
   );
 };

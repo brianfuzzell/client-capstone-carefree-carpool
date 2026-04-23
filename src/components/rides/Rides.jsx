@@ -115,7 +115,7 @@ export const Rides = ({ currentDriver }) => {
   };
 
   return (
-    <>
+    <div className="body-container">
       <div>
         <h2>Rides</h2>
       </div>
@@ -241,6 +241,6 @@ export const Rides = ({ currentDriver }) => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
+    </div>
   );
 };

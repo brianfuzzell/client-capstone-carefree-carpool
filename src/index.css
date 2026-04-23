@@ -59,11 +59,9 @@ p {
 }
 
 #root {
-  width: 1126px;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -102,6 +100,11 @@ h6 {
 
 .nav-link {
   font-family: Arvo, system-ui, "Segoe UI", Roboto, sans-serif !important;
+}
+
+.body-container {
+  padding-top: 2rem !important;
+  max-width: 800px;
 }
 
 code,

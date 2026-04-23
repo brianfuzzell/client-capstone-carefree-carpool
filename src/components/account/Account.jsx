@@ -123,7 +123,7 @@ export const Account = ({ currentDriver, userDrivers, userRiders, refetchUserDat
   };
 
   return (
-    <Form>
+    <Form className="body-container">
       <div>
         <h2>Account</h2>
       </div>

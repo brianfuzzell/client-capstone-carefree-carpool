@@ -1,6 +1,6 @@
 export const Welcome = () => {
   return (
-    <div>
+    <div className="body-container">
       <div>
         <span
           className="material-symbols-outlined"
