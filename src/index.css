@@ -169,6 +169,23 @@ h6 {
   background-color: #2b3035;
 }
 
+.ride-card {
+  border: 1px solid #495057;
+  border-radius: .375rem;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.ride-buttons {
+  display: flex;
+  padding-top: 1rem;
+  justify-content: flex-end;
+}
+
+.ride-button-edit {
+  margin-right: 1rem;
+}
+
 code,
 .counter {
   font-family: var(--mono);
