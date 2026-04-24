@@ -14,9 +14,8 @@ import {
   editShift,
 } from "../../services/shiftService";
 
-export const RideCard = ({ currentDriver, myShifts, setMyShifts }) => {
+export const RideCard = ({ currentDriver, myShifts, setMyShifts, userDrivers, setUserDrivers }) => {
   const [allRiders, setAllRiders] = useState([]);
-  const [userDrivers, setUserDrivers] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [editingShift, setEditingShift] = useState(null);
   const [editDate, setEditDate] = useState("");
@@ -45,20 +44,6 @@ export const RideCard = ({ currentDriver, myShifts, setMyShifts }) => {
 
     return `${monthNames[parseInt(month) - 1]} ${parseInt(day)}, ${parseInt(year)}`;
   };
-
-  useEffect(() => {
-    if (currentDriver.id) {
-      getUserDrivers().then((usersArray) => {
-        const foundUser = usersArray.find(
-          (user) => user.id === currentDriver.userId,
-        );
-
-        const drivers = foundUser?.drivers || [];
-
-        setUserDrivers(drivers);
-      });
-    }
-  }, [currentDriver.id, currentDriver.userId]);
 
   useEffect(() => {
     getAllRiders().then((ridersArray) => {
@@ -110,8 +95,9 @@ export const RideCard = ({ currentDriver, myShifts, setMyShifts }) => {
         return getShiftsByDriverAndRiderShifts();
       })
       .then((shiftsArray) => {
-        const filtered = shiftsArray.filter(
-          (shift) => shift.driverId === currentDriver.id,
+        const familyDriverIds = userDrivers.map((driver) => driver.id);
+        const filtered = shiftsArray.filter((shift) =>
+          familyDriverIds.includes(shift.driverId),
         );
         setMyShifts(filtered);
         handleCloseModal();
@@ -141,8 +127,9 @@ export const RideCard = ({ currentDriver, myShifts, setMyShifts }) => {
     if (confirmation) {
       deleteShift(shiftId).then(() => {
         getShiftsByDriverAndRiderShifts().then((shiftsArray) => {
-          const filtered = shiftsArray.filter(
-            (shift) => shift.driverId === currentDriver.id,
+          const familyDriverIds = userDrivers.map((driver) => driver.id);
+          const filtered = shiftsArray.filter((shift) =>
+            familyDriverIds.includes(shift.driverId),
           );
           setMyShifts(filtered);
         });

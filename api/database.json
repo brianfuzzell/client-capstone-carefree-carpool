@@ -113,6 +113,13 @@
       "fullName": "Carefree Carpool",
       "email": "carefree.carpool@carpool.app",
       "phone": "615-555-9862"
+    },
+    {
+      "fullName": "Best Carpool",
+      "phone": "615-012-3456",
+      "email": "best.carpool@carpool.app",
+      "userId": 7,
+      "id": 13
     }
   ],
   "riders": [
@@ -190,13 +197,6 @@
       "driverId": 8
     },
     {
-      "id": 5,
-      "date": "2026-04-27",
-      "morning": true,
-      "afternoon": false,
-      "driverId": 5
-    },
-    {
       "id": 6,
       "date": "2026-04-24",
       "morning": true,
@@ -211,25 +211,18 @@
       "id": 7
     },
     {
-      "date": "2026-04-23",
+      "date": "2026-05-02",
       "morning": true,
       "afternoon": false,
-      "driverId": 1,
+      "driverId": 13,
       "id": 8
     },
     {
-      "date": "2026-04-23",
+      "id": 9,
+      "date": "2026-05-03",
       "morning": true,
       "afternoon": false,
-      "driverId": 2,
-      "id": 9
-    },
-    {
-      "date": "2026-04-27",
-      "morning": false,
-      "afternoon": true,
-      "driverId": 5,
-      "id": 10
+      "driverId": 13
     }
   ],
   "riderShifts": [
@@ -409,14 +402,24 @@
       "id": 44
     },
     {
-      "riderId": 5,
-      "shiftId": 11,
+      "riderId": 4,
+      "shiftId": 8,
       "id": 45
     },
     {
-      "riderId": 2,
-      "shiftId": 11,
+      "riderId": 9,
+      "shiftId": 8,
       "id": 46
+    },
+    {
+      "riderId": 7,
+      "shiftId": 8,
+      "id": 47
+    },
+    {
+      "riderId": 7,
+      "shiftId": 9,
+      "id": 48
     }
   ]
 }
