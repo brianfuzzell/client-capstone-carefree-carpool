@@ -108,17 +108,16 @@ h6 {
   padding-top: 3rem;
 }
 
-.form-group {
-  max-width: 600px;
-  margin: 0 auto;
+.form-container {
+  width: auto !important;
   display: flex;
   flex-direction: column;
+  align-items: center !important;
+  padding-top: 3rem;
 }
 
 .form-control {
   margin: .5rem;
-  display: flex;
-  flex-direction: column;
 }
 
 .body-container {

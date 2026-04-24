@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { Col, Container, Row } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 import { getDriverByEmail } from "../../services/driverService";
 
 export const Login = () => {
@@ -32,7 +35,7 @@ export const Login = () => {
   };
 
   return (
-    <main className="body-container">
+    <Form className="body-container">
       <header className="header">
         <span
           className="material-symbols-outlined"
@@ -46,34 +49,35 @@ export const Login = () => {
         </span>
         <h1>Carefree Carpool</h1>
       </header>
-      <section className="container-login">
-        <form className="form-login" onSubmit={handleLogin}>
+      
+        <Form.Group controlId="formHorizontalEmail" className="form-container">
           <h5>Please sign in</h5>
-          <fieldset>
-            <div className="form-group">
-              <input
-                type="email"
-                value={email}
-                onChange={(evt) => set(evt.target.value)}
-                className="form-control"
-                placeholder="Email address"
-                required
-                autoFocus
-              />
-            </div>
-          </fieldset>
-          <fieldset>
-            <div>
-              <button className="login-btn btn-info" type="submit">
-                Sign in
-              </button>
-            </div>
-          </fieldset>
-        </form>
-      </section>
-      <section>
-        <Link to="/register">Not a member yet?</Link>
-      </section>
-    </main>
+        
+          <Form.Control
+            type="email"
+            value={email}
+            onChange={(evt) => set(evt.target.value)}
+            className="form-control"
+            placeholder="Email address"
+            required
+            autoFocus
+          />
+        </Form.Group>
+
+        <Form.Group as={Row} className="mb-3 account-buttons">
+        <Col>
+          <Button type="submit" onSubmit={handleLogin}>
+            Sign in
+          </Button>
+        </Col>
+      </Form.Group>
+      
+       <Form.Group>
+        <Col>
+          <Link to="/register">Not a member yet?</Link>
+        </Col>
+        </Form.Group> 
+      
+    </Form>
   );
 };
