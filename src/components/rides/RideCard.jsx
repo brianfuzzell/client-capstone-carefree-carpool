@@ -135,8 +135,8 @@ export const RideCard = ({ currentDriver, myShifts, setMyShifts }) => {
   };
 
   const handleDelete = (shiftId) => {
-    const confirmation = window.alert(
-      "Are you sure you want to delete this ride?",
+    const confirmation = window.confirm(
+      "Are you sure?",
     );
     if (confirmation) {
       deleteShift(shiftId).then(() => {
