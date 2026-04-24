@@ -44,6 +44,21 @@ export const Schedule = ({ currentDriver }) => {
 
   return (
     <>
+      <div>
+        <span
+          className="material-symbols-outlined"
+          style={{
+            fontSize: "100px",
+            color: "#7ba591",
+            fontVariationSettings: `'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48`,
+          }}
+        >
+          directions_car
+        </span>
+      </div>
+      <h1>Carefree Carpool</h1>
+      <div>Schedule rides with ease</div>
+      
       <h2>Schedule</h2>
       <h5>This Week at a Glance</h5>
 
