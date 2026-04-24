@@ -136,7 +136,7 @@ export const Rides = ({ currentDriver }) => {
           <Modal.Title id="contained-modal-title-vcenter">Add Ride</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form id="addRideForm" onSubmit={(e) =>{
+          <Form id="addRideForm" onSubmit={(e) => {
             e.preventDefault()
             handleAddRide()
             }}>
@@ -158,6 +158,7 @@ export const Rides = ({ currentDriver }) => {
                   label="Morning"
                   name="timeOfDay"
                   type="radio"
+                  required
                   checked={newMorning}
                   onChange={() => {
                     setNewMorning(true);

@@ -226,6 +226,10 @@ export const RideCard = ({ currentDriver, myShifts, setMyShifts }) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <Form id="editRideForm" onSubmit={(e) => {
+            e.preventDefault()
+            handleEdit()
+          }}>
           {editingShift &&
             (() => {
           
@@ -233,6 +237,7 @@ export const RideCard = ({ currentDriver, myShifts, setMyShifts }) => {
                 <>
                   <div className="mb-3">
                     <Form.Control
+                      required={true}
                       type="date"
                       name="date"
                       value={editDate}
@@ -244,6 +249,7 @@ export const RideCard = ({ currentDriver, myShifts, setMyShifts }) => {
 
                     <div className="mb-3">
                       <Form.Check
+                        required
                         inline
                         label="Morning"
                         name="timeOfDay"
@@ -312,9 +318,10 @@ export const RideCard = ({ currentDriver, myShifts, setMyShifts }) => {
                 </>
               );
             })()}
+          </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleEdit}>Save Changes</Button>
+          <Button type="submit" form="editRideForm">Save Changes</Button>
         </Modal.Footer>
       </Modal>
     </Form>
