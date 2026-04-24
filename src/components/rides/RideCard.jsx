@@ -148,19 +148,20 @@ export const RideCard = ({ currentDriver, myShifts, setMyShifts, userDrivers, se
         );
 
         return (
-          <div key={shift.id}>
+          <div className="app-space" key={shift.id}>
             <Form.Group className="mb-3">
-              <div>
+              <div className="ride-details">
                 <h5>{formattedDate(shift.date)}</h5>
                 <p>{shift.morning ? "Morning" : "Afternoon"}</p>
               </div>
               <div>
-                <div>
+                <div className="ride-details">
                   <strong>Driver: </strong>
                   {shift.driver.fullName}
                 </div>
               </div>
-              <Form.Label>
+              <div className="ride-details">
+              <Form.Label className="ride-riders">
                 <strong>Riders:</strong>
               </Form.Label>
 
@@ -180,6 +181,7 @@ export const RideCard = ({ currentDriver, myShifts, setMyShifts, userDrivers, se
                   />
                 );
               })}
+              </div>
             </Form.Group>
 
             <Button

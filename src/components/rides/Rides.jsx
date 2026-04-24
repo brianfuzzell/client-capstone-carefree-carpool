@@ -116,14 +116,12 @@ export const Rides = ({ currentDriver }) => {
 
   return (
     <div className="body-container">
-      <div>
+      <header className="rides-header">
         <h2>Rides</h2>
-      </div>
-      <div>
         <Button variant="primary" type="button" onClick={handleOpenAddModal}>
           Add New Ride
         </Button>
-      </div>
+      </header>
 
       <RideCard
         currentDriver={currentDriver}
