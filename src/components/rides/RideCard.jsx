@@ -14,7 +14,7 @@ import {
   editShift,
 } from "../../services/shiftService";
 
-export const RideCard = ({ currentDriver, myShifts }) => {
+export const RideCard = ({ currentDriver, myShifts, setMyShifts }) => {
   const [allRiders, setAllRiders] = useState([]);
   const [userDrivers, setUserDrivers] = useState([]);
   const [showModal, setShowModal] = useState(false);

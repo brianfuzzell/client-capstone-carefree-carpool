@@ -46,6 +46,22 @@ export const ApplicationViews = () => {
     }
   }, [currentDriver.id]);
 
+  const refetchUserData = () => {
+    getUserDrivers().then((usersArray) => {
+      const foundUser = usersArray.find(
+          (user) => user.id === currentDriver.userId,
+        );
+      setUserDrivers(foundUser?.drivers || [])
+    })
+
+    getUserRiders().then((usersArray) => {
+      const foundUser = usersArray.find(
+          (user) => user.id === currentDriver.userId,
+        );
+      setUserRiders(foundUser?.riders || [])
+    })
+  }
+
   return (
     <Routes>
       <Route
@@ -79,6 +95,7 @@ export const ApplicationViews = () => {
               currentDriver={currentDriver}
               userDrivers={userDrivers}
               userRiders={userRiders}
+              refetchUserData={refetchUserData}
             />
           }
         />

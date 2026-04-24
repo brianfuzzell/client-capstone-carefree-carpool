@@ -13,19 +13,35 @@ export const Register = (props) => {
   let navigate = useNavigate()
 
   const registerNewDriver = () => {
-    createDriver(driver).then((createDriver) => {
-      if (createDriver.hasOwnProperty("id")) {
+    const nameParts = driver.fullName.split(" ");
+    const familyName = nameParts[nameParts.length - 1];
+
+    const newUser = {
+      familyName: familyName,
+    };
+
+    createUser(newUser)
+      .then((createdUser) => {
+        const driverWithUserId = {
+          ...driver,
+          userId: createdUser.id,
+        };
+        return createDriver(driverWithUserId);
+      })
+      .then((createdDriver) => {
         localStorage.setItem(
           "carpool_driver",
           JSON.stringify({
-            id: createDriver.id
-          })
-        )
-
-        navigate("/")
-      }
-    })
-  }
+            id: createdDriver.id,
+            userId: createdDriver.userId,
+            fullName: createdDriver.fullName,
+            email: createdDriver.email,
+            phone: createdDriver.phone,
+          }),
+        );
+        navigate("/");
+      });
+  };
 
   const handleRegister = (e) => {
     e.preventDefault()
@@ -58,7 +74,7 @@ export const Register = (props) => {
               type="text"
               id="fullName"
               className="form-control"
-              placeholder="Enter your name"
+              placeholder="Enter your full name"
               required
               autoFocus
             />
