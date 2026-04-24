@@ -136,85 +136,93 @@ export const Rides = ({ currentDriver }) => {
           <Modal.Title id="contained-modal-title-vcenter">Add Ride</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="mb-3">
-            <Form.Control
-              type="date"
-              name="date"
-              value={newDate}
-              onChange={(event) => setNewDate(event.target.value)}
-            />
-            <Form.Label column sm={2}>
-              <strong>Shift</strong>
-            </Form.Label>
-
+          <Form id="addRideForm" onSubmit={(e) =>{
+            e.preventDefault()
+            handleAddRide()
+            }}>
             <div className="mb-3">
-              <Form.Check
-                inline
-                label="Morning"
-                name="timeOfDay"
-                type="radio"
-                checked={newMorning}
-                onChange={() => {
-                  setNewMorning(true);
-                  setNewAfternoon(false);
-                }}
+              <Form.Control
+                required={true}
+                type="date"
+                name="date"
+                value={newDate}
+                onChange={(event) => setNewDate(event.target.value)}
               />
-              <Form.Check
-                inline
-                label="Afternoon"
-                name="timeOfDay"
-                type="radio"
-                checked={newAfternoon}
-                onChange={() => {
-                  setNewMorning(false);
-                  setNewAfternoon(true);
-                }}
-              />
+              <Form.Label column sm={2}>
+                <strong>Shift</strong>
+              </Form.Label>
+
+              <div className="mb-3">
+                <Form.Check
+                  inline
+                  label="Morning"
+                  name="timeOfDay"
+                  type="radio"
+                  checked={newMorning}
+                  onChange={() => {
+                    setNewMorning(true);
+                    setNewAfternoon(false);
+                  }}
+                />
+                <Form.Check
+                  inline
+                  label="Afternoon"
+                  name="timeOfDay"
+                  type="radio"
+                  checked={newAfternoon}
+                  onChange={() => {
+                    setNewMorning(false);
+                    setNewAfternoon(true);
+                  }}
+                />
+              </div>
+
+              <Form.Label>
+                <strong>Driver</strong>
+              </Form.Label>
+              {userDrivers.map((driver) => (
+                <Form.Check
+                  key={driver.id}
+                  inline
+                  label={driver.fullName}
+                  name="Driver"
+                  type="radio"
+                  checked={newDriverId === driver.id}
+                  onChange={() => {
+                    setNewDriverId(driver.id);
+                  }}
+                />
+              ))}
             </div>
-
             <Form.Label>
-              <strong>Driver</strong>
+              <strong>Riders:</strong>
             </Form.Label>
-            {userDrivers.map((driver) => (
-              <Form.Check
-                key={driver.id}
-                inline
-                label={driver.fullName}
-                name="Driver"
-                type="radio"
-                checked={newDriverId === driver.id}
-                onChange={() => {
-                  setNewDriverId(driver.id);
-                }}
-              />
-            ))}
-          </div>
-          <Form.Label>
-            <strong>Riders:</strong>
-          </Form.Label>
-          {allRiders.map((rider) => {
-            const isSelected = newRiderIds.includes(rider.id);
+            <div>
+              {allRiders.map((rider) => {
+                const isSelected = newRiderIds.includes(rider.id);
 
-            return (
-              <Form.Check
-                key={rider.id}
-                type="checkbox"
-                label={rider.fullName}
-                checked={isSelected}
-                inline
-                onChange={() => {
-                  if (isSelected) {
-                    setNewRiderIds(newRiderIds.filter((id) => id !== rider.id));
-                  } else {
-                    setNewRiderIds([...newRiderIds, rider.id]);
-                  }
-                }}
-              />
-            );
-          })}
+                return (
+                  <Form.Check
+                    key={rider.id}
+                    type="checkbox"
+                    label={rider.fullName}
+                    checked={isSelected}
+                    inline
+                    onChange={() => {
+                      if (isSelected) {
+                        setNewRiderIds(newRiderIds.filter((id) => id !== rider.id));
+                      } else {
+                        setNewRiderIds([...newRiderIds, rider.id]);
+                      }
+                    }}
+                  />
+                );
+              })}
+            </div>
+          </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleAddRide}>Save</Button>
+          <Button type="submit" form="addRideForm">Save</Button>
         </Modal.Footer>
       </Modal>
     </>
