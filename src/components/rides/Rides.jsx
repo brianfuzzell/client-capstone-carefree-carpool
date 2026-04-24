@@ -42,31 +42,32 @@ export const Rides = ({ currentDriver }) => {
   }, []);
 
   useEffect(() => {
-    if (currentDriver.id) {
+    if (currentDriver.id && userDrivers.length > 0) {
       getAllRiders().then(setAllRiders);
 
       getShiftsByDriverAndRiderShifts().then((shiftsArray) => {
-        const filtered = shiftsArray.filter(
-          (shift) => shift.driverId === currentDriver.id,
+        const familyDriverIds = userDrivers.map((driver) => driver.id);
+        const filtered = shiftsArray.filter((shift) =>
+          familyDriverIds.includes(shift.driverId),
         );
 
         const sorted = filtered.sort((a, b) => {
-          if (a.date < b.date) return -1
-          if (a.date > b.date) return 1
+          if (a.date < b.date) return -1;
+          if (a.date > b.date) return 1;
           if (a.date === b.date) {
             if (a.morning && b.afternoon) {
-              return -1
+              return -1;
             }
             if (a.afternoon && b.morning) {
-              return 1
+              return 1;
             }
           }
-        })
+        });
 
         setMyShifts(sorted);
       });
     }
-  }, [currentDriver.id]);
+  }, [currentDriver.id, userDrivers]);
 
   const handleOpenAddModal = () => {
     setNewDate("");
@@ -104,8 +105,9 @@ export const Rides = ({ currentDriver }) => {
         return getShiftsByDriverAndRiderShifts();
       })
       .then((shiftsArray) => {
-        const filtered = shiftsArray.filter(
-          (shift) => shift.driverId === currentDriver.id,
+        const familyDriverIds = userDrivers.map((driver) => driver.id);
+        const filtered = shiftsArray.filter((shift) =>
+          familyDriverIds.includes(shift.driverId),
         );
         setMyShifts(filtered);
         handleCloseAddModal();
@@ -123,7 +125,13 @@ export const Rides = ({ currentDriver }) => {
         </Button>
       </div>
 
-      <RideCard currentDriver={currentDriver} myShifts={myShifts} setMyShifts={setMyShifts} />
+      <RideCard
+        currentDriver={currentDriver}
+        myShifts={myShifts}
+        setMyShifts={setMyShifts}
+        userDrivers={userDrivers}
+        setUserDrivers={setUserDrivers}
+      />
       <Modal
         show={showAddModal}
         onHide={handleCloseAddModal}
@@ -136,10 +144,13 @@ export const Rides = ({ currentDriver }) => {
           <Modal.Title id="contained-modal-title-vcenter">Add Ride</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form id="addRideForm" onSubmit={(e) => {
-            e.preventDefault()
-            handleAddRide()
-            }}>
+          <Form
+            id="addRideForm"
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleAddRide();
+            }}
+          >
             <div className="mb-3">
               <Form.Control
                 required={true}
@@ -211,7 +222,9 @@ export const Rides = ({ currentDriver }) => {
                     inline
                     onChange={() => {
                       if (isSelected) {
-                        setNewRiderIds(newRiderIds.filter((id) => id !== rider.id));
+                        setNewRiderIds(
+                          newRiderIds.filter((id) => id !== rider.id),
+                        );
                       } else {
                         setNewRiderIds([...newRiderIds, rider.id]);
                       }
@@ -223,7 +236,9 @@ export const Rides = ({ currentDriver }) => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button type="submit" form="addRideForm">Save</Button>
+          <Button type="submit" form="addRideForm">
+            Save
+          </Button>
         </Modal.Footer>
       </Modal>
     </>
