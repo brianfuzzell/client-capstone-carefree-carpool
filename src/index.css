@@ -111,6 +111,34 @@ h6 {
   flex-direction: column;
 }
 
+.header {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.header > h1 {
+  margin: 0 0 0 1rem;
+}
+
+.app-space {
+  padding-top: 2rem;
+}
+
+.schedule-details {
+  text-align: left;
+  line-height: 185%;
+}
+
+.schedule-afternoon {
+  padding-top: 1.5rem;
+}
+
+.accordion-button {
+  color: #ffffff;
+  
+}
+
 code,
 .counter {
   font-family: var(--mono);

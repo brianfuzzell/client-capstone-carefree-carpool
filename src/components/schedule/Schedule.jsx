@@ -44,7 +44,7 @@ export const Schedule = ({ currentDriver }) => {
 
   return (
     <div className="body-container">
-      <div>
+      <header className="header">
         <span
           className="material-symbols-outlined"
           style={{
@@ -55,14 +55,15 @@ export const Schedule = ({ currentDriver }) => {
         >
           directions_car
         </span>
-      </div>
-      <h1>Carefree Carpool</h1>
+        <h1>Carefree Carpool</h1>
+      </header>
+
       <div>Schedule rides with ease</div>
-      <h2>Schedule</h2>
+      <h2 className="app-space">Schedule</h2>
       <h5>This Week at a Glance</h5>
 
       <article>
-        <Accordion>
+        <Accordion className="app-space">
           {/* Object.keys extracts property names (keys) and puts them into an array */}
           {Object.keys(shiftsWithDetails)
             .sort()
@@ -114,45 +115,43 @@ export const Schedule = ({ currentDriver }) => {
               };
 
               return (
-                
-                  <Accordion.Item key={date} eventKey={date}>
-                    <Accordion.Header>{formattedDate(date)}</Accordion.Header>
-                    <Accordion.Body>
-                      {morningShift && (
-                        <>
-                          <div>
-                            <h5>Morning</h5>
-                            <strong>Driver: </strong>
-                            {morningShift.driver.fullName}
-                          </div>
+                <Accordion.Item key={date} eventKey={date}>
+                  <Accordion.Header>{formattedDate(date)}</Accordion.Header>
+                  <Accordion.Body>
+                    {morningShift && (
+                      <div className="schedule-details">
+                        <div>
+                          <h5>Morning</h5>
+                          <strong>Driver: </strong>
+                          {morningShift.driver.fullName}
+                        </div>
 
-                          <div>
-                            <strong>Riders: </strong>
-                            {morningRiders
-                              .map((rider) => rider.fullName)
-                              .join(", ")}
-                          </div>
-                        </>
-                      )}
+                        <div>
+                          <strong>Riders: </strong>
+                          {morningRiders
+                            .map((rider) => rider.fullName)
+                            .join(", ")}
+                        </div>
+                      </div>
+                    )}
 
-                      {afternoonShift && (
-                        <>
-                          <div>
-                            <h5>Afternoon</h5>
-                            <strong>Driver: </strong>
-                            {afternoonShift.driver.fullName}
-                          </div>
-                          <div>
-                            <strong>Riders: </strong>
-                            {afternoonRiders
-                              .map((rider) => rider.fullName)
-                              .join(", ")}
-                          </div>
-                        </>
-                      )}
-                    </Accordion.Body>
-                  </Accordion.Item>
-                
+                    {afternoonShift && (
+                      <div className="schedule-details schedule-afternoon">
+                        <div>
+                          <h5>Afternoon</h5>
+                          <strong>Driver: </strong>
+                          {afternoonShift.driver.fullName}
+                        </div>
+                        <div>
+                          <strong>Riders: </strong>
+                          {afternoonRiders
+                            .map((rider) => rider.fullName)
+                            .join(", ")}
+                        </div>
+                      </div>
+                    )}
+                  </Accordion.Body>
+                </Accordion.Item>
               );
             })}
         </Accordion>
