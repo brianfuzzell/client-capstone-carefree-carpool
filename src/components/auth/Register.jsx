@@ -43,18 +43,6 @@ export const Register = (props) => {
       });
   };
 
-  /* createDriver(userId).then((createDriver) => {
-        if (createDriver.hasOwnProperty("id")) {
-          localStorage.setItem(
-            "carpool_driver",
-            JSON.stringify({
-              id: createDriver.id,
-            }),
-          );
-        }
-      });
-      navigate("/"); */
-
   const handleRegister = (e) => {
     e.preventDefault()
     getDriverByEmail(driver.email).then((response) => {
