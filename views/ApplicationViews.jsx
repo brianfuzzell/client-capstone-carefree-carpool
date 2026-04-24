@@ -73,7 +73,7 @@ export const ApplicationViews = () => {
           </>
         }
       >
-        <Route index element={<Welcome currentDriver={currentDriver} />} />
+        <Route index element={<Schedule currentDriver={currentDriver} />} />
         <Route
           path="/schedule"
           element={<Schedule currentDriver={currentDriver} />}
