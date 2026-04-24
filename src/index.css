@@ -98,7 +98,7 @@ h6 {
   font-size: 1rem;
 }
 
-.nav-link {
+.nav-font {
   font-family: Arvo, system-ui, "Segoe UI", Roboto, sans-serif !important;
 }
 
@@ -186,6 +186,12 @@ h6 {
   margin-right: 1rem;
 }
 
+#basic-nav-dropdown + .dropdown-menu {
+  width: auto !important;
+  min-width: 10rem;
+  max-width: 200px;
+}
+
 code,
 .counter {
   font-family: var(--mono);
@@ -199,4 +205,11 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+@media screen and (max-width: 768px) {
+  #basic-nav-dropdown + .dropdown-menu {
+    padding: 9px;
+    margin: 0;
+  }
 }
