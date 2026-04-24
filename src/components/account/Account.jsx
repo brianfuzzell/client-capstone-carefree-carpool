@@ -16,7 +16,12 @@ import {
 } from "../../services/driverService";
 import { getAllRiders, createRider } from "../../services/riderService";
 
-export const Account = ({ currentDriver, userDrivers, userRiders, refetchUserData }) => {
+export const Account = ({
+  currentDriver,
+  userDrivers,
+  userRiders,
+  refetchUserData,
+}) => {
   const [allUsers, setAllUsers] = useState([]);
   const [user, setUser] = useState({});
   const [allRiders, setAllRiders] = useState([]);
@@ -99,7 +104,7 @@ export const Account = ({ currentDriver, userDrivers, userRiders, refetchUserDat
     };
 
     createDriver(newDriver).then(() => {
-      refetchUserData()
+      refetchUserData();
       setNewDriverName("");
       setNewDriverPhone("");
       setNewDriverEmail("");
@@ -116,7 +121,7 @@ export const Account = ({ currentDriver, userDrivers, userRiders, refetchUserDat
     };
 
     createRider(newRider).then(() => {
-      refetchUserData()
+      refetchUserData();
       setNewRiderName("");
       window.alert("New rider added");
     });
@@ -124,20 +129,18 @@ export const Account = ({ currentDriver, userDrivers, userRiders, refetchUserDat
 
   return (
     <Form className="body-container">
-      <div>
-        <h2>Account</h2>
+      <h2>Account</h2>
+      <h4>{user?.familyName}</h4>
+      <div className="app-space">
+        <h6>Driver(s): {driversInAccount}</h6>
+        <h6>Rider(s): {ridersInAccount}</h6>
+        
       </div>
-      <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
-        <h4>{user?.familyName}</h4>
-        <p>
-          <strong>Driver(s): </strong>
-          {driversInAccount}
-        </p>
-        <br />
-        <p>
-          <strong>Rider(s): </strong>
-          {ridersInAccount}
-        </p>
+      <Form.Group
+        as={Row}
+        className="mb-3 account-space"
+        controlId="formHorizontalEmail"
+      >
         <Form.Label column sm={2}>
           Phone
         </Form.Label>
@@ -167,15 +170,19 @@ export const Account = ({ currentDriver, userDrivers, userRiders, refetchUserDat
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row} className="mb-3">
-        <Col sm={{ span: 10, offset: 2 }}>
+      <Form.Group as={Row} className="mb-3 account-buttons">
+        <Col>
           <Button type="submit" onClick={handleSave}>
             Save
           </Button>
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
+      <Form.Group
+        as={Row}
+        className="mb-3 account-space"
+        controlId="formHorizontalPassword"
+      >
         <h5>Add Driver</h5>
 
         <Form.Label column sm={2}>
@@ -228,15 +235,23 @@ export const Account = ({ currentDriver, userDrivers, userRiders, refetchUserDat
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row} className="mb-3">
-        <Col sm={{ span: 10, offset: 2 }}>
-          <Button variant="outline-secondary" type="submit" onClick={handleAddDriver}>
+      <Form.Group as={Row} className="mb-3 account-buttons">
+        <Col>
+          <Button
+            variant="outline-secondary"
+            type="submit"
+            onClick={handleAddDriver}
+          >
             Add Driver
           </Button>
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
+      <Form.Group
+        as={Row}
+        className="mb-3 account-space"
+        controlId="formHorizontalPassword"
+      >
         <h5>Add Rider</h5>
 
         <Form.Label column sm={2}>
@@ -255,9 +270,13 @@ export const Account = ({ currentDriver, userDrivers, userRiders, refetchUserDat
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row} className="mb-3">
-        <Col sm={{ span: 10, offset: 2 }}>
-          <Button variant="outline-secondary" type="submit" onClick={handleAddRider}>
+      <Form.Group as={Row} className="mb-3 account-buttons">
+        <Col>
+          <Button
+            variant="outline-secondary"
+            type="submit"
+            onClick={handleAddRider}
+          >
             Add Rider
           </Button>
         </Col>
