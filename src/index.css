@@ -104,7 +104,11 @@ h6 {
 
 .body-container {
   padding-top: 2rem !important;
-  max-width: 800px;
+  max-width: 800px !important;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 code,

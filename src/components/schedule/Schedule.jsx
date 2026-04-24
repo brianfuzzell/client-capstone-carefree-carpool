@@ -62,98 +62,100 @@ export const Schedule = ({ currentDriver }) => {
       <h5>This Week at a Glance</h5>
 
       <article>
-        {/* Object.keys extracts property names (keys) and puts them into an array */}
-        {Object.keys(shiftsWithDetails)
-          .sort()
-          .map((date) => {
-            const shiftsForThisDate = shiftsWithDetails[date];
+        <Accordion>
+          {/* Object.keys extracts property names (keys) and puts them into an array */}
+          {Object.keys(shiftsWithDetails)
+            .sort()
+            .map((date) => {
+              const shiftsForThisDate = shiftsWithDetails[date];
 
-            const morningShift = shiftsForThisDate.find(
-              (shift) => shift.morning === true,
-            );
-            const afternoonShift = shiftsForThisDate.find(
-              (shift) => shift.afternoon === true,
-            );
+              const morningShift = shiftsForThisDate.find(
+                (shift) => shift.morning === true,
+              );
+              const afternoonShift = shiftsForThisDate.find(
+                (shift) => shift.afternoon === true,
+              );
 
-            const morningRiderIds =
-              morningShift?.riderShifts.map(
-                (riderShift) => riderShift.riderId,
-              ) || [];
-            const morningRiders = allRiders.filter((rider) =>
-              morningRiderIds.includes(rider.id),
-            );
+              const morningRiderIds =
+                morningShift?.riderShifts.map(
+                  (riderShift) => riderShift.riderId,
+                ) || [];
+              const morningRiders = allRiders.filter((rider) =>
+                morningRiderIds.includes(rider.id),
+              );
 
-            const afternoonRiderIds =
-              afternoonShift?.riderShifts.map(
-                (riderShift) => riderShift.riderId,
-              ) || [];
-            const afternoonRiders = allRiders.filter((rider) =>
-              afternoonRiderIds.includes(rider.id),
-            );
+              const afternoonRiderIds =
+                afternoonShift?.riderShifts.map(
+                  (riderShift) => riderShift.riderId,
+                ) || [];
+              const afternoonRiders = allRiders.filter((rider) =>
+                afternoonRiderIds.includes(rider.id),
+              );
 
-            const formattedDate = (dateString) => {
-              const [year, month, day] = dateString.split("-");
+              const formattedDate = (dateString) => {
+                const [year, month, day] = dateString.split("-");
 
-              const monthNames = [
-                "January",
-                "February",
-                "March",
-                "April",
-                "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December",
-              ];
+                const monthNames = [
+                  "January",
+                  "February",
+                  "March",
+                  "April",
+                  "May",
+                  "June",
+                  "July",
+                  "August",
+                  "September",
+                  "October",
+                  "November",
+                  "December",
+                ];
 
-              return `${monthNames[parseInt(month) - 1]} ${parseInt(day)}, ${parseInt(year)}`;
-            };
+                return `${monthNames[parseInt(month) - 1]} ${parseInt(day)}, ${parseInt(year)}`;
+              };
 
-            return (
-              <Accordion key={date}>
-                <Accordion.Item eventKey={date}>
-                  <Accordion.Header>{formattedDate(date)}</Accordion.Header>
-                  <Accordion.Body>
-                    {morningShift && (
-                      <>
-                        <div>
-                          <h5>Morning</h5>
-                          <strong>Driver: </strong>
-                          {morningShift.driver.fullName}
-                        </div>
+              return (
+                
+                  <Accordion.Item key={date} eventKey={date}>
+                    <Accordion.Header>{formattedDate(date)}</Accordion.Header>
+                    <Accordion.Body>
+                      {morningShift && (
+                        <>
+                          <div>
+                            <h5>Morning</h5>
+                            <strong>Driver: </strong>
+                            {morningShift.driver.fullName}
+                          </div>
 
-                        <div>
-                          <strong>Riders: </strong>
-                          {morningRiders
-                            .map((rider) => rider.fullName)
-                            .join(", ")}
-                        </div>
-                      </>
-                    )}
+                          <div>
+                            <strong>Riders: </strong>
+                            {morningRiders
+                              .map((rider) => rider.fullName)
+                              .join(", ")}
+                          </div>
+                        </>
+                      )}
 
-                    {afternoonShift && (
-                      <>
-                        <div>
-                          <h5>Afternoon</h5>
-                          <strong>Driver: </strong>
-                          {afternoonShift.driver.fullName}
-                        </div>
-                        <div>
-                          <strong>Riders: </strong>
-                          {afternoonRiders
-                            .map((rider) => rider.fullName)
-                            .join(", ")}
-                        </div>
-                      </>
-                    )}
-                  </Accordion.Body>
-                </Accordion.Item>
-              </Accordion>
-            );
-          })}
+                      {afternoonShift && (
+                        <>
+                          <div>
+                            <h5>Afternoon</h5>
+                            <strong>Driver: </strong>
+                            {afternoonShift.driver.fullName}
+                          </div>
+                          <div>
+                            <strong>Riders: </strong>
+                            {afternoonRiders
+                              .map((rider) => rider.fullName)
+                              .join(", ")}
+                          </div>
+                        </>
+                      )}
+                    </Accordion.Body>
+                  </Accordion.Item>
+                
+              );
+            })}
+        </Accordion>
       </article>
     </div>
   );
