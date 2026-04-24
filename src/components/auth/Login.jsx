@@ -1,18 +1,18 @@
-import React, { useState } from "react"
-import { Link } from "react-router-dom"
-import { useNavigate } from "react-router-dom"
-import { getDriverByEmail } from "../../services/driverService" 
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { getDriverByEmail } from "../../services/driverService";
 
 export const Login = () => {
-  const [email, set] = useState("carefree.carpool@carpool.app")
-  const navigate = useNavigate()
+  const [email, set] = useState("carefree.carpool@carpool.app");
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     getDriverByEmail(email).then((foundUsers) => {
       if (foundUsers.length === 1) {
-        const user = foundUsers[0]
+        const user = foundUsers[0];
         localStorage.setItem(
           "carpool_driver",
           JSON.stringify({
@@ -20,23 +20,35 @@ export const Login = () => {
             userId: user.userId,
             fullName: user.fullName,
             email: user.email,
-            phone: user.phone
-          })
-        )
+            phone: user.phone,
+          }),
+        );
 
-        navigate("/")
+        navigate("/");
       } else {
-        window.alert("Invalid login")
+        window.alert("Invalid login");
       }
-    })
-  }
+    });
+  };
 
   return (
-    <main className="container-login body-container">
-      <section>
+    <main className="body-container">
+      <header className="header">
+        <span
+          className="material-symbols-outlined"
+          style={{
+            fontSize: "100px",
+            color: "#7ba591",
+            fontVariationSettings: `'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48`,
+          }}
+        >
+          directions_car
+        </span>
+        <h1>Carefree Carpool</h1>
+      </header>
+      <section className="container-login">
         <form className="form-login" onSubmit={handleLogin}>
-          <h1>Carefree Carpool</h1>
-          <h2>Please sign in</h2>
+          <h5>Please sign in</h5>
           <fieldset>
             <div className="form-group">
               <input
@@ -51,7 +63,7 @@ export const Login = () => {
             </div>
           </fieldset>
           <fieldset>
-            <div className="form-group">
+            <div>
               <button className="login-btn btn-info" type="submit">
                 Sign in
               </button>
@@ -63,5 +75,5 @@ export const Login = () => {
         <Link to="/register">Not a member yet?</Link>
       </section>
     </main>
-  )
-}
+  );
+};

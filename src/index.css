@@ -104,6 +104,23 @@ h6 {
   font-family: Arvo, system-ui, "Segoe UI", Roboto, sans-serif !important;
 }
 
+.container-login {
+  padding-top: 3rem;
+}
+
+.form-group {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control {
+  margin: .5rem;
+  display: flex;
+  flex-direction: column;
+}
+
 .body-container {
   padding-top: 2rem !important;
   max-width: 800px !important;
