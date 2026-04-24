@@ -112,14 +112,7 @@
       "userId": 7,
       "fullName": "Carefree Carpool",
       "email": "carefree.carpool@carpool.app",
-      "phone": "555-123-45678"
-    },
-    {
-      "fullName": "Brian Carpool",
-      "phone": "555-765-4321",
-      "email": "brian@carpool.app",
-      "userId": 7,
-      "id": 13
+      "phone": "615-555-9862"
     }
   ],
   "riders": [
@@ -237,13 +230,6 @@
       "afternoon": true,
       "driverId": 5,
       "id": 10
-    },
-    {
-      "date": "2026-05-01",
-      "morning": true,
-      "afternoon": false,
-      "driverId": 12,
-      "id": 11
     }
   ],
   "riderShifts": [
@@ -423,12 +409,12 @@
       "id": 44
     },
     {
-      "riderId": 10,
+      "riderId": 5,
       "shiftId": 11,
       "id": 45
     },
     {
-      "riderId": 9,
+      "riderId": 2,
       "shiftId": 11,
       "id": 46
     }
