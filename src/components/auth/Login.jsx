@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
@@ -35,8 +35,8 @@ export const Login = () => {
   };
 
   return (
-    <Form className="body-container">
-      <header className="header">
+    <Form className="body-container" onSubmit={handleLogin}>
+      <header className="header account-space">
         <span
           className="material-symbols-outlined"
           style={{
@@ -66,7 +66,7 @@ export const Login = () => {
 
         <Form.Group as={Row} className="mb-3 account-buttons">
         <Col>
-          <Button type="submit" onSubmit={handleLogin}>
+          <Button type="submit">
             Sign in
           </Button>
         </Col>
