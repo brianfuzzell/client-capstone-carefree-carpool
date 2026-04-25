@@ -128,7 +128,6 @@ export const Rides = ({ currentDriver }) => {
         myShifts={myShifts}
         setMyShifts={setMyShifts}
         userDrivers={userDrivers}
-        setUserDrivers={setUserDrivers}
       />
       <Modal
         show={showAddModal}

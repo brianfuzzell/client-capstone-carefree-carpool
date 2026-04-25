@@ -18,8 +18,7 @@ export const RideCard = ({
   currentDriver,
   myShifts,
   setMyShifts,
-  userDrivers,
-  setUserDrivers,
+  userDrivers
 }) => {
   const [allRiders, setAllRiders] = useState([]);
   const [showModal, setShowModal] = useState(false);

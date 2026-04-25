@@ -262,16 +262,6 @@
       "shiftId": 4
     },
     {
-      "id": 13,
-      "riderId": 4,
-      "shiftId": 5
-    },
-    {
-      "id": 14,
-      "riderId": 8,
-      "shiftId": 5
-    },
-    {
       "id": 15,
       "riderId": 5,
       "shiftId": 6
@@ -280,21 +270,6 @@
       "id": 16,
       "riderId": 6,
       "shiftId": 6
-    },
-    {
-      "riderId": 5,
-      "shiftId": 5,
-      "id": 19
-    },
-    {
-      "riderId": 2,
-      "shiftId": 5,
-      "id": 22
-    },
-    {
-      "riderId": 1,
-      "shiftId": 5,
-      "id": 23
     },
     {
       "riderId": 3,
@@ -390,16 +365,6 @@
       "riderId": 2,
       "shiftId": 9,
       "id": 42
-    },
-    {
-      "riderId": 1,
-      "shiftId": 10,
-      "id": 43
-    },
-    {
-      "riderId": 6,
-      "shiftId": 10,
-      "id": 44
     },
     {
       "riderId": 4,

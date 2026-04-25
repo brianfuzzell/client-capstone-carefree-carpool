@@ -3,9 +3,9 @@ export const getAllShifts = () => {
 };
 
 export const getShiftsByDriverAndRiderShifts = () => {
-  return fetch("http://localhost:8088/shifts?_expand=driver&_embed=riderShifts").then(
-    (res) => res.json(),
-  );
+  return fetch(
+    "http://localhost:8088/shifts?_expand=driver&_embed=riderShifts",
+  ).then((res) => res.json());
 };
 
 export const createShift = (newShift) => {
@@ -25,14 +25,14 @@ export const editShift = (shiftObject) => {
   return fetch(`http://localhost:8088/shifts/${shiftObject.id}`, {
     method: "PUT",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(shiftObject)
-  })
-}
+    body: JSON.stringify(shiftObject),
+  }).then((res) => res.json());
+};
 
 export const deleteShift = (shiftId) => {
   return fetch(`http://localhost:8088/shifts/${shiftId}`, {
-    method: "DELETE"
-  })
-}
+    method: "DELETE",
+  });
+};
