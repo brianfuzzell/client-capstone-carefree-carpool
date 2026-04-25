@@ -1,16 +1,22 @@
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { createUser } from "../../services/userService.js"
-import { getDriverByEmail, createDriver } from "../../services/driverService.js"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { createUser } from "../../services/userService.js";
+import { Col, Container, Row } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import {
+  getDriverByEmail,
+  createDriver,
+} from "../../services/driverService.js";
 
 export const Register = (props) => {
   const [driver, setDriver] = useState({
     email: "",
     fullName: "",
     phone: "",
-    userId: null
-  })
-  let navigate = useNavigate()
+    userId: null,
+  });
+  let navigate = useNavigate();
 
   const registerNewDriver = () => {
     const nameParts = driver.fullName.split(" ");
@@ -44,62 +50,69 @@ export const Register = (props) => {
   };
 
   const handleRegister = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     getDriverByEmail(driver.email).then((response) => {
       if (response.length > 0) {
         // Duplicate email. No good.
-        window.alert("Account with that email address already exists")
+        window.alert("Account with that email address already exists");
       } else {
         // Good email, create user.
-        registerNewDriver()
+        registerNewDriver();
       }
-    })
-  }
+    });
+  };
 
   const updateDriver = (evt) => {
-    const copy = { ...driver }
-    copy[evt.target.id] = evt.target.value
-    setDriver(copy)
-  }
+    const copy = { ...driver };
+    copy[evt.target.id] = evt.target.value;
+    setDriver(copy);
+  };
 
   return (
-    <main style={{ textAlign: "center" }}>
-      <form className="form-login" onSubmit={handleRegister}>
+    <Form className="body-container" onSubmit={handleRegister}>
+      <header className="header account-space">
+        <span
+          className="material-symbols-outlined"
+          style={{
+            fontSize: "100px",
+            color: "#7ba591",
+            fontVariationSettings: `'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48`,
+          }}
+        >
+          directions_car
+        </span>
         <h1>Carefree Carpool</h1>
-        <h2>Please Register</h2>
-        <fieldset>
-          <div className="form-group">
-            <input
-              onChange={updateDriver}
-              type="text"
-              id="fullName"
-              className="form-control"
-              placeholder="Enter your full name"
-              required
-              autoFocus
-            />
-          </div>
-        </fieldset>
-        <fieldset>
-          <div className="form-group">
-            <input
-              onChange={updateDriver}
-              type="email"
-              id="email"
-              className="form-control"
-              placeholder="Email address"
-              required
-            />
-          </div>
-        </fieldset>
-        <fieldset>
-          <div className="form-group">
-            <button className="login-btn btn-info" type="submit">
-              Register
-            </button>
-          </div>
-        </fieldset>
-      </form>
-    </main>
-  )
-}
+      </header>
+
+      <Form.Group className="form-container">
+        <h5>Please Register</h5>
+
+        <Form.Control
+          type="text"
+          value={driver.fullName}
+          id="fullName"
+          onChange={updateDriver}
+          className="form-control"
+          placeholder="Enter your full name"
+          required
+        />
+
+        <Form.Control
+          type="email"
+          value={driver.email}
+          id="email"
+          onChange={updateDriver}
+          className="form-control"
+          placeholder="Email address"
+          required
+        />
+      </Form.Group>
+
+      <Form.Group as={Row} className="mb-3 account-buttons">
+        <Col>
+          <Button type="submit">Register</Button>
+        </Col>
+      </Form.Group>
+    </Form>
+  );
+};

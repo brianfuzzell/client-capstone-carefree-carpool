@@ -59,11 +59,9 @@ p {
 }
 
 #root {
-  width: 1126px;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -95,13 +93,124 @@ h4 {
 }
 h5 {
   font-size: 1.15rem;
+  color: #7ba591;
 }
 h6 {
   font-size: 1rem;
+  line-height: 185%;
 }
 
-.nav-link {
+.nav-font {
   font-family: Arvo, system-ui, "Segoe UI", Roboto, sans-serif !important;
+}
+
+.container-login {
+  padding-top: 3rem;
+}
+
+.form-container {
+  width: auto !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  padding-top: 3rem;
+}
+
+.form-control {
+  margin: .5rem;
+}
+
+.body-container {
+  padding-top: 2rem !important;
+  max-width: 800px !important;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.header > h1 {
+  margin: 0 0 0 1rem;
+}
+
+.rides-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.rides-header > h2 {
+  margin: 0;
+}
+
+.rides-header > button {
+  position: absolute;
+  right: 0;
+}
+
+.app-space {
+  padding-top: 2rem;
+}
+
+.schedule-details {
+  text-align: left;
+  line-height: 185%;
+}
+
+.schedule-afternoon {
+  padding-top: 1.5rem;
+}
+
+.ride-details {
+  text-align: left;
+  padding-top: 1rem;
+}
+
+.ride-riders {
+  margin-right: 10px;
+}
+
+.accordion-button {
+  color: #ffffff;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #ffffff;
+  background-color: #2b3035;
+}
+
+.ride-card {
+  border: 1px solid #495057;
+  border-radius: .375rem;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.ride-buttons {
+  display: flex;
+  padding-top: 1rem;
+  justify-content: flex-end;
+}
+
+.ride-button-edit {
+  margin-right: 1rem;
+}
+
+.account-space {
+  padding-top: 2rem;
+}
+
+.account-buttons {
+  display: flex;
+  margin-left: auto !important;
 }
 
 code,
@@ -117,4 +226,10 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+@media screen and (max-width: 768px) {
+  .nav-font {
+    text-align: left !important;
+  }
 }

@@ -43,8 +43,8 @@ export const Schedule = ({ currentDriver }) => {
   }, []);
 
   return (
-    <>
-      <div>
+    <div className="body-container">
+      <header className="header">
         <span
           className="material-symbols-outlined"
           style={{
@@ -55,71 +55,71 @@ export const Schedule = ({ currentDriver }) => {
         >
           directions_car
         </span>
-      </div>
-      <h1>Carefree Carpool</h1>
+        <h1>Carefree Carpool</h1>
+      </header>
+
       <div>Schedule rides with ease</div>
-      
-      <h2>Schedule</h2>
+      <h2 className="app-space">Schedule</h2>
       <h5>This Week at a Glance</h5>
 
       <article>
-        {/* Object.keys extracts property names (keys) and puts them into an array */}
-        {Object.keys(shiftsWithDetails)
-          .sort()
-          .map((date) => {
-            const shiftsForThisDate = shiftsWithDetails[date];
+        <Accordion className="app-space">
+          {/* Object.keys extracts property names (keys) and puts them into an array */}
+          {Object.keys(shiftsWithDetails)
+            .sort()
+            .map((date) => {
+              const shiftsForThisDate = shiftsWithDetails[date];
 
-            const morningShift = shiftsForThisDate.find(
-              (shift) => shift.morning === true,
-            );
-            const afternoonShift = shiftsForThisDate.find(
-              (shift) => shift.afternoon === true,
-            );
+              const morningShift = shiftsForThisDate.find(
+                (shift) => shift.morning === true,
+              );
+              const afternoonShift = shiftsForThisDate.find(
+                (shift) => shift.afternoon === true,
+              );
 
-            const morningRiderIds =
-              morningShift?.riderShifts.map(
-                (riderShift) => riderShift.riderId,
-              ) || [];
-            const morningRiders = allRiders.filter((rider) =>
-              morningRiderIds.includes(rider.id),
-            );
+              const morningRiderIds =
+                morningShift?.riderShifts.map(
+                  (riderShift) => riderShift.riderId,
+                ) || [];
+              const morningRiders = allRiders.filter((rider) =>
+                morningRiderIds.includes(rider.id),
+              );
 
-            const afternoonRiderIds =
-              afternoonShift?.riderShifts.map(
-                (riderShift) => riderShift.riderId,
-              ) || [];
-            const afternoonRiders = allRiders.filter((rider) =>
-              afternoonRiderIds.includes(rider.id),
-            );
+              const afternoonRiderIds =
+                afternoonShift?.riderShifts.map(
+                  (riderShift) => riderShift.riderId,
+                ) || [];
+              const afternoonRiders = allRiders.filter((rider) =>
+                afternoonRiderIds.includes(rider.id),
+              );
 
-            const formattedDate = (dateString) => {
-              const [year, month, day] = dateString.split("-");
+              const formattedDate = (dateString) => {
+                const [year, month, day] = dateString.split("-");
 
-              const monthNames = [
-                "January",
-                "February",
-                "March",
-                "April",
-                "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December",
-              ];
+                const monthNames = [
+                  "January",
+                  "February",
+                  "March",
+                  "April",
+                  "May",
+                  "June",
+                  "July",
+                  "August",
+                  "September",
+                  "October",
+                  "November",
+                  "December",
+                ];
 
-              return `${monthNames[parseInt(month) - 1]} ${parseInt(day)}, ${parseInt(year)}`;
-            };
+                return `${monthNames[parseInt(month) - 1]} ${parseInt(day)}, ${parseInt(year)}`;
+              };
 
-            return (
-              <Accordion key={date}>
-                <Accordion.Item eventKey={date}>
+              return (
+                <Accordion.Item key={date} eventKey={date}>
                   <Accordion.Header>{formattedDate(date)}</Accordion.Header>
                   <Accordion.Body>
                     {morningShift && (
-                      <>
+                      <div className="schedule-details">
                         <div>
                           <h5>Morning</h5>
                           <strong>Driver: </strong>
@@ -132,11 +132,11 @@ export const Schedule = ({ currentDriver }) => {
                             .map((rider) => rider.fullName)
                             .join(", ")}
                         </div>
-                      </>
+                      </div>
                     )}
 
                     {afternoonShift && (
-                      <>
+                      <div className="schedule-details schedule-afternoon">
                         <div>
                           <h5>Afternoon</h5>
                           <strong>Driver: </strong>
@@ -148,14 +148,14 @@ export const Schedule = ({ currentDriver }) => {
                             .map((rider) => rider.fullName)
                             .join(", ")}
                         </div>
-                      </>
+                      </div>
                     )}
                   </Accordion.Body>
                 </Accordion.Item>
-              </Accordion>
-            );
-          })}
+              );
+            })}
+        </Accordion>
       </article>
-    </>
+    </div>
   );
 };

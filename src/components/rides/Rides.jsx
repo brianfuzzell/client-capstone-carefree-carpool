@@ -115,22 +115,19 @@ export const Rides = ({ currentDriver }) => {
   };
 
   return (
-    <>
-      <div>
+    <div className="body-container">
+      <header className="rides-header">
         <h2>Rides</h2>
-      </div>
-      <div>
         <Button variant="primary" type="button" onClick={handleOpenAddModal}>
           Add New Ride
         </Button>
-      </div>
+      </header>
 
       <RideCard
         currentDriver={currentDriver}
         myShifts={myShifts}
         setMyShifts={setMyShifts}
         userDrivers={userDrivers}
-        setUserDrivers={setUserDrivers}
       />
       <Modal
         show={showAddModal}
@@ -241,6 +238,6 @@ export const Rides = ({ currentDriver }) => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
+    </div>
   );
 };
