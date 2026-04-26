@@ -1,0 +1,311 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "familyName": "Simpson"
+    },
+    {
+      "id": 2,
+      "familyName": "Flanders"
+    },
+    {
+      "id": 3,
+      "familyName": "Wiggum"
+    },
+    {
+      "id": 4,
+      "familyName": "Van Houten"
+    },
+    {
+      "id": 5,
+      "familyName": "Muntz"
+    },
+    {
+      "id": 6,
+      "familyName": "Lovejoy"
+    },
+    {
+      "id": 7,
+      "familyName": "Carpool"
+    }
+  ],
+  "drivers": [
+    {
+      "id": 1,
+      "fullName": "Marge Simpson",
+      "phone": "555-555-5551",
+      "email": "margesimpson@yahoo.com",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "fullName": "Homer Simpson",
+      "email": "mmmdonuts@yahoo.com",
+      "phone": "555-555-0591"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "fullName": "Ned Flanders",
+      "email": "ned.flanders@gmail.com",
+      "phone": "615-555-1236"
+    },
+    {
+      "id": 4,
+      "fullName": "Sarah Wiggum",
+      "phone": "555-555-5500",
+      "email": "sarahwiggum@netscape.net",
+      "userId": 3
+    },
+    {
+      "id": 5,
+      "fullName": "Chief Wiggum",
+      "phone": "555-555-5100",
+      "email": "chiefwiggum@netscape.net",
+      "userId": 3
+    },
+    {
+      "id": 6,
+      "fullName": "Luann Van Houten",
+      "phone": "555-555-5123",
+      "email": "vanhoutenfamily@aol.com",
+      "userId": 4
+    },
+    {
+      "id": 7,
+      "fullName": "Kirk Van Houten",
+      "phone": "555-555-5456",
+      "email": "kvanhouten@aol.com",
+      "userId": 4
+    },
+    {
+      "id": 8,
+      "fullName": "Eddie Muntz",
+      "phone": "555-555-5987",
+      "email": "muntz-r-us@aol.com",
+      "userId": 5
+    },
+    {
+      "id": 9,
+      "fullName": "Marilyn Muntz",
+      "phone": "555-555-5000",
+      "email": "mmuntz@aol.com",
+      "userId": 5
+    },
+    {
+      "id": 10,
+      "fullName": "Reverend Lovejoy",
+      "phone": "555-555-5777",
+      "email": "revlovejoy@netscape.net",
+      "userId": 6
+    },
+    {
+      "id": 11,
+      "fullName": "Helen Lovejoy",
+      "phone": "555-555-5710",
+      "email": "helenlovejoy@netscape.net",
+      "userId": 6
+    },
+    {
+      "id": 12,
+      "userId": 7,
+      "fullName": "Carefree Carpool",
+      "email": "carefree.carpool@carpool.app",
+      "phone": "615-555-9862"
+    },
+    {
+      "fullName": "Best Carpool",
+      "phone": "615-012-3456",
+      "email": "best.carpool@carpool.app",
+      "userId": 7,
+      "id": 13
+    }
+  ],
+  "riders": [
+    {
+      "id": 1,
+      "fullName": "Bart Simpson",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "fullName": "Lisa Simpson",
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "fullName": "Rod Flanders",
+      "userId": 2
+    },
+    {
+      "id": 4,
+      "fullName": "Todd Flanders",
+      "userId": 2
+    },
+    {
+      "id": 5,
+      "fullName": "Ralph Wiggum",
+      "userId": 3
+    },
+    {
+      "id": 6,
+      "fullName": "Milhouse Van Houten",
+      "userId": 4
+    },
+    {
+      "id": 7,
+      "fullName": "Nelson Muntz",
+      "userId": 5
+    },
+    {
+      "id": 8,
+      "fullName": "Jessica Lovejoy",
+      "userId": 6
+    },
+    {
+      "fullName": "Maggie Simpson",
+      "userId": 1,
+      "id": 9
+    },
+    {
+      "fullName": "Montgomery Burns",
+      "userId": 7,
+      "id": 10
+    }
+  ],
+  "shifts": [
+    {
+      "date": "2026-05-18",
+      "morning": true,
+      "afternoon": false,
+      "driverId": 12,
+      "id": 1
+    },
+    {
+      "date": "2026-05-18",
+      "morning": false,
+      "afternoon": true,
+      "driverId": 13,
+      "id": 2
+    },
+    {
+      "date": "2026-05-19",
+      "morning": true,
+      "afternoon": false,
+      "driverId": 2,
+      "id": 3
+    },
+    {
+      "date": "2026-05-19",
+      "morning": false,
+      "afternoon": true,
+      "driverId": 1,
+      "id": 4
+    },
+    {
+      "date": "2026-05-20",
+      "morning": true,
+      "afternoon": false,
+      "driverId": 3,
+      "id": 5
+    }
+  ],
+  "riderShifts": [
+    {
+      "riderId": 7,
+      "shiftId": 1,
+      "id": 1
+    },
+    {
+      "riderId": 6,
+      "shiftId": 1,
+      "id": 2
+    },
+    {
+      "riderId": 1,
+      "shiftId": 1,
+      "id": 3
+    },
+    {
+      "riderId": 2,
+      "shiftId": 2,
+      "id": 4
+    },
+    {
+      "riderId": 1,
+      "shiftId": 2,
+      "id": 5
+    },
+    {
+      "riderId": 3,
+      "shiftId": 2,
+      "id": 6
+    },
+    {
+      "riderId": 4,
+      "shiftId": 2,
+      "id": 7
+    },
+    {
+      "riderId": 1,
+      "shiftId": 3,
+      "id": 8
+    },
+    {
+      "riderId": 8,
+      "shiftId": 3,
+      "id": 9
+    },
+    {
+      "riderId": 2,
+      "shiftId": 3,
+      "id": 10
+    },
+    {
+      "riderId": 10,
+      "shiftId": 3,
+      "id": 11
+    },
+    {
+      "riderId": 6,
+      "shiftId": 3,
+      "id": 12
+    },
+    {
+      "riderId": 4,
+      "shiftId": 4,
+      "id": 13
+    },
+    {
+      "riderId": 3,
+      "shiftId": 4,
+      "id": 14
+    },
+    {
+      "riderId": 2,
+      "shiftId": 4,
+      "id": 15
+    },
+    {
+      "riderId": 3,
+      "shiftId": 5,
+      "id": 16
+    },
+    {
+      "riderId": 4,
+      "shiftId": 5,
+      "id": 17
+    },
+    {
+      "riderId": 6,
+      "shiftId": 5,
+      "id": 18
+    },
+    {
+      "riderId": 7,
+      "shiftId": 5,
+      "id": 19
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+:root {
+  --text: #6b6375;
+  --text-h: #f3f4f6;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: Inter, system-ui, "Segoe UI", Roboto, sans-serif;
+  --bs-font-sans-serif: var(--sans);
+  --heading: Arvo, system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+body,
+p {
+  margin: 0;
+  font-family: var(--sans);
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.3rem;
+}
+h5 {
+  font-size: 1.15rem;
+  color: #7ba591;
+}
+h6 {
+  font-size: 1rem;
+  line-height: 185%;
+}
+
+.nav-font {
+  font-family: Arvo, system-ui, "Segoe UI", Roboto, sans-serif !important;
+}
+
+.container-login {
+  padding-top: 3rem;
+}
+
+.form-container {
+  width: auto !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  padding-top: 3rem;
+}
+
+.form-control {
+  margin: .5rem;
+}
+
+.body-container {
+  padding-top: 2rem !important;
+  max-width: 800px !important;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.header > h1 {
+  margin: 0 0 0 1rem;
+}
+
+.rides-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.rides-header > h2 {
+  margin: 0;
+}
+
+.rides-header > button {
+  position: absolute;
+  right: 0;
+}
+
+.app-space {
+  padding-top: 2rem;
+}
+
+.schedule-details {
+  text-align: left;
+  line-height: 185%;
+}
+
+.schedule-afternoon {
+  padding-top: 1.5rem;
+}
+
+.ride-details {
+  text-align: left;
+  padding-top: 1rem;
+}
+
+.ride-riders {
+  margin-right: 10px;
+}
+
+.accordion-button {
+  color: #ffffff;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #ffffff;
+  background-color: #2b3035;
+}
+
+.ride-card {
+  border: 1px solid #495057;
+  border-radius: .375rem;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.ride-buttons {
+  display: flex;
+  padding-top: 1rem;
+  justify-content: flex-end;
+}
+
+.ride-button-edit {
+  margin-right: 1rem;
+}
+
+.account-space {
+  padding-top: 2rem;
+}
+
+.account-buttons {
+  display: flex;
+  margin-left: auto !important;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+@media screen and (max-width: 768px) {
+  .nav-font {
+    text-align: left !important;
+  }
+
+  .body-container {
+    padding: 1rem;
+  }
+
+  .header {
+    display: block;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  h1 {
+  font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+  }
+  h4 {
+    font-size: 1.2rem;
+  }
+  h5 {
+    font-size: 1.1rem;
+    color: #7ba591;
+  }
+  h6 {
+    font-size: 1rem;
+    line-height: 185%;
+  }
+}
