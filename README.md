@@ -13,7 +13,9 @@ Scheduling and communication. Maintaining the schedule through group messaging a
 🔥 See screen animations below or better yet, [install the app](#installation) and take it for a test drive.
 
 ### Challenges
-Like every professional software project I've worked on, scope and focus were the biggest challenges. I wanted to squeeze so many features and functionality into the MVP (sound familiar?), but a limited timeline with a real deadline meant I had to revise and scale my focus down to a scope that would deliver real value to customers on the due date. After delivering a working MVP app, I can gather feedback, iterate, and expand features and functionality. But maintaining the discipline to keep the scope small enough to deliver an MVP on time was definitely difficult.
+Scope and state! Like every professional software project I've worked on, scope was a big challenges. I wanted to squeeze so many features and functionality into the MVP (sound familiar?), but a limited timeline with a real deadline meant I had to revise and scale my focus down to a scope that would deliver real value to customers on the due date. After delivering a working MVP app, I can gather feedback, iterate, and expand features and functionality. But maintaining the discipline to keep the scope small enough to deliver an MVP on time was definitely difficult.
+
+And then there's state. Setting state's starter values, updating state when values change, never modifying state directly... there's a lot to juggle with state and it was a big challenge for Carefree Carpool.
 
 ### Stretch Goals
 What's next for this project? I have several stretch goals I plan to work on, but **Unit Tests** are at the top of the list.
@@ -39,11 +41,13 @@ What's next for this project? I have several stretch goals I plan to work on, bu
 1. You must support CRUD in your application. Create data, Read data, Update data, Delete data
 2. You are required to use React.
 3. You must have a form that allows a user to create a new resource.
-4. Your form must include <select> element, radio button group, or checkbox group that allows a user to choose a related resource. For example, if your application allows users to create new plants for their home, one of the fields in the form must allow them to select something like the following items:
-- The room it will be in.
-- The level of sunlight it needs.
-- It's type.
-5. You must show your proficiency with writing modular code that follows the the Single Responsibility Principle.
+4. Your form must include `<select>` element, radio button group, or checkbox group that allows a user to choose a related resource. For example, if your application allows users to create new plants for their home, one of the fields in the form must allow them to select something like the following items:
+
+    - The room it will be in.
+    - The level of sunlight it needs.
+    - Its type.
+
+5. You must show your proficiency with writing modular code that follows the Single Responsibility Principle.
 6. Your application must support multiple routes to show different views to the user, and the user must be able to navigate to each route/view.
 7. Customer must be able to delete their own data, and be prevented from deleting other customers' data.
 8. Customer must be able to edit their own data, and be prevented from editing other customers' data.
