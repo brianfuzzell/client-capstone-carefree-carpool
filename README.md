@@ -15,6 +15,9 @@ Scheduling and communication. Maintaining the schedule through group messaging a
 ### Challenges
 Like every professional software project I've worked on, scope and focus were the biggest challenges. I wanted to squeeze so many features and functionality into the MVP (sound familiar?), but a limited timeline with a real deadline meant I had to revise and scale my focus down to a scope that would deliver real value to customers on the due date. After delivering a working MVP app, I can gather feedback, iterate, and expand features and functionality. But maintaining the discipline to keep the scope small enough to deliver an MVP on time was definitely difficult.
 
+### Stretch Goals
+What's next for this project? I have several stretch goals I plan to work on, but **Unit Tests** are at the top of the list.
+
 ### Animations
 ![Carefree Carpool - Editing rides](public/carefreeCarpoolDemo1.gif "Editing rides")
 
@@ -24,8 +27,30 @@ Like every professional software project I've worked on, scope and focus were th
 
 ![Carefree Carpool - Add rider](public/carefreeCarpoolDemo4.gif "Add rider")
 
-## Installation
+#### Capstone Requirements
+##### Data
+1. You must have an ERD for your project.
+1. You must have a user-related data scheme. This means that different people can authenticate with your application, and the resources that are created must be assigned to individual users.
+1. In addition to having user-related data, you need to have at least one more 1 -> many relationships defined in your ERD.
+1. Having a many -> many relationship is recommended, but not required for your client side project.
+1. You are required to use the persistent storage tool that you were taught (i.e. json-server, firebase, SQL Server, SQLite, etc.).
 
+##### Application Design Requirements
+1. You must support CRUD in your application. Create data, Read data, Update data, Delete data
+2. You are required to use React.
+3. You must have a form that allows a user to create a new resource.
+4. Your form must include <select> element, radio button group, or checkbox group that allows a user to choose a related resource. For example, if your application allows users to create new plants for their home, one of the fields in the form must allow them to select something like the following items:
+- The room it will be in.
+- The level of sunlight it needs.
+- It's type.
+5. You must show your proficiency with writing modular code that follows the the Single Responsibility Principle.
+6. Your application must support multiple routes to show different views to the user, and the user must be able to navigate to each route/view.
+7. Customer must be able to delete their own data, and be prevented from deleting other customers' data.
+8. Customer must be able to edit their own data, and be prevented from editing other customers' data.
+9. You must be able to implement a flexible layout for your UI by either (a) authoring your own CSS using Flexbox, or (b) using a 3rd party framework like Bootstrap.
+10. All copy for your application must be legible, so pay attention to colors, margins, padding, and font sizes.
+
+## Installation
 1. Clone the repository
 ```bash
    git clone https://github.com/yourusername/carefree-carpool.git
