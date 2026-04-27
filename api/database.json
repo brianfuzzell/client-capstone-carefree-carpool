@@ -176,18 +176,11 @@
   ],
   "shifts": [
     {
-      "date": "2026-05-18",
+      "id": 1,
+      "date": "2026-05-22",
       "morning": true,
       "afternoon": false,
-      "driverId": 12,
-      "id": 1
-    },
-    {
-      "date": "2026-05-18",
-      "morning": false,
-      "afternoon": true,
-      "driverId": 13,
-      "id": 2
+      "driverId": 12
     },
     {
       "date": "2026-05-19",
@@ -212,41 +205,6 @@
     }
   ],
   "riderShifts": [
-    {
-      "riderId": 7,
-      "shiftId": 1,
-      "id": 1
-    },
-    {
-      "riderId": 6,
-      "shiftId": 1,
-      "id": 2
-    },
-    {
-      "riderId": 1,
-      "shiftId": 1,
-      "id": 3
-    },
-    {
-      "riderId": 2,
-      "shiftId": 2,
-      "id": 4
-    },
-    {
-      "riderId": 1,
-      "shiftId": 2,
-      "id": 5
-    },
-    {
-      "riderId": 3,
-      "shiftId": 2,
-      "id": 6
-    },
-    {
-      "riderId": 4,
-      "shiftId": 2,
-      "id": 7
-    },
     {
       "riderId": 1,
       "shiftId": 3,
