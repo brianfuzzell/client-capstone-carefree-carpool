@@ -55,6 +55,10 @@ What's next for this project? I have several stretch goals I plan to work on, bu
 10. All copy for your application must be legible, so pay attention to colors, margins, padding, and font sizes.
 
 ## Installation
+*Prerequisites*
+- Node.js (v18 or higher)
+- npm (comes with Node.js)
+  
 1. Clone the repository
 ```bash
    git clone https://github.com/yourusername/carefree-carpool.git
@@ -66,15 +70,49 @@ What's next for this project? I have several stretch goals I plan to work on, bu
    npm install
 ```
 
-3. Start the development server
+3. Install json-server globally (one-time setup)
+```bash
+   npm install -g json-server
+```
+
+4. Start the backend (json-server)
+   
+   Open a terminal and run:
+```bash
+   cd api
+   json-server -p 8088 -w database.json
+```
+   
+   Leave this terminal running.
+   
+
+5. Start the frontend (in a new terminal)
 ```bash
    npm run dev
 ```
 
-4. In a separate terminal, start the JSON server
+6. In a separate terminal, start the JSON server
 ```bash
    cd api
    json-server -p 8088 -w database.json
 ```
 
-5. Open your browser to `http://localhost:5173`
+7. Open your browser to `http://localhost:5173`
+
+---
+## Demo Account
+
+To see the app with existing data, log in with:
+- **Email:** `carefree.carpool@carpool.app`
+- **Password:** (no password required, just email)
+
+Or register a new account to start fresh
+
+## Database Structure
+
+The app uses these tables:
+- **users** - Family/admin-level accounts
+- **drivers** - Carpool drivers
+- **riders** - Riders being carpooled
+- **shifts** - Individual rides (morning or afternoon)
+- **riderShifts** - Links riders to specific shifts
