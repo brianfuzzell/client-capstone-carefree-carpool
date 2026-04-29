@@ -20,6 +20,7 @@ export const RideCard = ({
   setMyShifts,
   userDrivers
 }) => {
+  console.log('Shift data:', myShifts)
   const [allRiders, setAllRiders] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [editingShift, setEditingShift] = useState(null);
@@ -160,7 +161,7 @@ export const RideCard = ({
               <div>
                 <div className="ride-details">
                   <strong>Driver: </strong>
-                  {shift.driver.fullName}
+                  {shift.driver?.fullName}
                 </div>
               </div>
               <div className="ride-details">
