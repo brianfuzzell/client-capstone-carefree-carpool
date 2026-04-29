@@ -6,6 +6,7 @@ import { Schedule } from "../src/components/schedule/Schedule";
 import { Rides } from "../src/components/rides/Rides";
 import { Account } from "../src/components/account/Account";
 import { getUserDrivers, getUserRiders } from "../src/services/userService";
+import { About } from "../src/components/about/About";
 
 export const ApplicationViews = () => {
   const [currentDriver, setCurrentDriver] = useState({});
@@ -88,6 +89,7 @@ export const ApplicationViews = () => {
             />
           }
         />
+        <Route path="/about" element={<About />} />
         <Route
           path="/account"
           element={

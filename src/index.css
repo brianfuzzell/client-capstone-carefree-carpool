@@ -213,6 +213,21 @@ h6 {
   margin-left: auto !important;
 }
 
+.about-container {
+  text-align: left;
+}
+
+.about-space {
+  padding: 1rem 0;
+}
+
+.about-requirements {
+  background-color: #2b3035;
+  font-size: 14px !important;
+  padding: 2rem;
+  border-radius: .375rem;
+}
+
 code,
 .counter {
   font-family: var(--mono);
