@@ -1,5 +1,10 @@
 # Introduction
-Thank you for reviewing my client-side React capstone project - one of the biggest projects required during my full-time full stack course work at Nashville Software School. The **Carefree Carpool** web application was developed using React.js, React Bootstrap for styling, custom CSS for extra flavor, and a JSON server database. 
+Thank you for reviewing my client-side React capstone project - one of the biggest projects required during my full-time full stack course work at Nashville Software School. The **Carefree Carpool** web application was developed using React.js, React Bootstrap for styling, and custom CSS for extra flavor. The frontend is deployed on Vercel and the backend database is hosted on Supabase. 
+
+## 🚗 Take it for a test drive!
+- Navigate to [carefree-carpool.vercel.app](https://carefree-carpool.vercel.app/)
+- [Install the app locally](#installation)
+- See screen animations below
 
 ### Purpose
 Like many people across the world, I'm a carpool driver. Whether we're carpooling middle schoolers, commuting coworkers, or ride sharing young adults, clearly communicating the ride shifts for both drivers and riders is a top priority. 
@@ -9,8 +14,6 @@ Scheduling and communication. Maintaining the schedule through group messaging a
 - Quickly check the latest schedule on the go in the mobile-first UI. 
 - Add a 2nd driver and countless riders to your account. 
 - Easily schedule, edit, or delete your shifts in real time.
-
-🔥 See screen animations below or better yet, [install the app](#installation) and take it for a test drive.
 
 ### Challenges
 Scope and state! Like every professional software project I've worked on, scope was a big challenges. I wanted to squeeze so many features and functionality into the MVP (sound familiar?), but a limited timeline with a real deadline meant I had to revise and scale my focus down to a scope that would deliver real value to customers on the due date. After delivering a working MVP app, I can gather feedback, iterate, and expand features and functionality. But maintaining the discipline to keep the scope small enough to deliver an MVP on time was definitely difficult.
@@ -75,38 +78,14 @@ What's next for this project? I have several stretch goals I plan to work on, bu
    npm install -g json-server
 ```
 
-4. Start the backend (json-server)
-   
-   Open a terminal and run:
-```bash
-   cd api
-   json-server -p 8088 -w database.json
-```
-   
-   Leave this terminal running.
-   
-
-5. Start the frontend (in a new terminal)
+4. Start the app
 ```bash
    npm run dev
 ```
 
-6. In a separate terminal, start the JSON server
-```bash
-   cd api
-   json-server -p 8088 -w database.json
-```
-
-7. Open your browser to `http://localhost:5173`
+5. Open your browser to `http://localhost:5173`
 
 ---
-## Demo Account
-
-To see the app with existing data, log in with:
-- **Email:** `carefree.carpool@carpool.app`
-- **Password:** (no password required, just email)
-
-Or register a new account to start fresh
 
 ## Database Structure
 
