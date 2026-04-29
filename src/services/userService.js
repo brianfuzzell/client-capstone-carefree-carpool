@@ -1,31 +1,68 @@
-export const getAllUsers = () => {
-  return fetch("http://localhost:8088/users").then((res) => res.json());
+import { supabase } from "../supabaseClient";
+
+export const getAllUsers = async () => {
+  const { data, error } = await supabase
+    .from('users')
+    .select('*')
+
+  if (error) {
+    console.error('Error fetching users:', error)
+    return []
+  }
+
+  return data
 };
 
-export const getUserDrivers = () => {
-  return fetch("http://localhost:8088/users?_embed=drivers").then((res) =>
-    res.json(),
-  );
+export const getUserDrivers = async () => {
+  const { data, error } = await supabase
+    .from('users')
+    .select('*, drivers(*)')
+
+  if (error) {
+    console.error('Error fetching drivers:', error)
+    return []
+  }
+
+  return data
 };
 
-export const getUserRiders = () => {
-  return fetch("http://localhost:8088/users?_embed=riders").then((res) =>
-    res.json(),
-  );
+export const getUserRiders = async () => {
+  const { data, error } = await supabase
+    .from('users')
+    .select('*, riders(*)')
+
+  if (error) {
+    console.error('Error fetching user riders:', error)
+    return []
+  }
+
+  return data
 };
 
-export const getUserById = (id) => {
-  return fetch(`http://localhost:8088/users?id=${id}`).then((res) =>
-    res.json(),
-  );
+export const getUserById = async (id) => {
+  const { data, error } = await supabase
+    .from('users')
+    .select('*')
+    .eq('id', id)
+
+  if (error) {
+    console.error('Error fetching user by id:', error)
+    return []
+  }
+
+  return data
 };
 
-export const createUser = (user) => {
-  return fetch("http://localhost:8088/users", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(user),
-  }).then((res) => res.json());
+export const createUser = async (user) => {
+  const { data, error } = await supabase
+    .from('users')
+    .insert([user])
+    .select()
+
+  if (error) {
+    console.error('Error creating user:', error)
+    return null
+  }
+
+  return data[0]
 };
