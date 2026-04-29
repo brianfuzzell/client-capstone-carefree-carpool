@@ -3,8 +3,8 @@ Thank you for reviewing my client-side React capstone project - one of the bigge
 
 ## 🚗 Take it for a test drive!
 - Navigate to [carefree-carpool.vercel.app](https://carefree-carpool.vercel.app/)
-- [Install the app locally](#installation)
-- See screen animations below
+- Or [Install the app locally](#installation)
+- Or... see screen animations below
 
 ### Purpose
 Like many people across the world, I'm a carpool driver. Whether we're carpooling middle schoolers, commuting coworkers, or ride sharing young adults, clearly communicating the ride shifts for both drivers and riders is a top priority. 
