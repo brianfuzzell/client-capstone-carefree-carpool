@@ -30,7 +30,10 @@ export const NavBar = () => {
             </Nav.Link>
             <Nav.Link className="nav-font" as={Link} to="/rides">
               Rides
-            </Nav.Link>
+            </Nav.Link> 
+            <Nav.Link className="nav-font" as={Link} to="/about">
+              About
+            </Nav.Link>      
             <NavDropdown className="nav-font" title="Settings" id="collapsible-nav-dropdown">
               <NavDropdown.Item className="nav-font" as={Link} to="/account">
                 Account
