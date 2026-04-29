@@ -160,7 +160,7 @@ export const RideCard = ({
               <div>
                 <div className="ride-details">
                   <strong>Driver: </strong>
-                  {shift.driver.fullName}
+                  {shift.driver?.fullName}
                 </div>
               </div>
               <div className="ride-details">

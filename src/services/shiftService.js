@@ -1,38 +1,68 @@
-export const getAllShifts = () => {
-  return fetch("http://localhost:8088/shifts").then((res) => res.json());
+import { supabase } from "../supabaseClient";
+
+export const getAllShifts = async () => {
+  const { data, error } = await supabase
+    .from('shifts')
+    .select('*')
+
+  if (error) {
+    console.error('Error fetching shifts:', error)
+    return []
+  }
+
+  return data
 };
 
-export const getShiftsByDriverAndRiderShifts = () => {
-  return fetch(
-    "http://localhost:8088/shifts?_expand=driver&_embed=riderShifts",
-  ).then((res) => res.json());
+export const getShiftsByDriverAndRiderShifts = async () => {
+  const { data, error } = await supabase
+    .from('shifts')
+    .select('*, driver:drivers(*), riderShifts(*)')
+
+  if (error) {
+    console.error('Error fetching shifts by driver and rider shifts:', error)
+    return []
+  }
+
+  return data
 };
 
-export const createShift = (newShift) => {
-  const postOptions = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newShift),
-  };
-  return fetch("http://localhost:8088/shifts", postOptions).then((res) =>
-    res.json(),
-  );
+export const createShift = async (newShift) => {
+  const { data, error } = await supabase
+    .from('shifts')
+    .insert([newShift])
+    .select()
+
+  if (error) {
+    console.error('Error creating shift:', error)
+    return null
+  }
+
+  return data[0]
 };
 
-export const editShift = (shiftObject) => {
-  return fetch(`http://localhost:8088/shifts/${shiftObject.id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(shiftObject),
-  }).then((res) => res.json());
+export const editShift = async (shiftObject) => {
+  const { data, error } = await supabase
+    .from('shifts')
+    .update(shiftObject)
+    .eq('id', shiftObject.id)
+    .select()
+
+  if (error) {
+    console.error('Error updating shift object:', error)
+    return null
+  }
+
+  return data[0]
 };
 
-export const deleteShift = (shiftId) => {
-  return fetch(`http://localhost:8088/shifts/${shiftId}`, {
-    method: "DELETE",
-  });
+export const deleteShift = async (shiftId) => {
+  const { error } = await supabase
+    .from('shifts')
+    .delete()
+    .eq('id', shiftId)
+
+  if (error) {
+    console.error('Error deleting shift:', error)
+    return null
+  }
 };

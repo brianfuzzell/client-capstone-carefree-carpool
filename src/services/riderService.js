@@ -1,33 +1,54 @@
-export const getAllRiders = () => {
-  return fetch("http://localhost:8088/riders").then((res) => res.json());
+import { supabase } from "../supabaseClient";
+
+export const getAllRiders = async () => {
+  const { data, error } = await supabase
+    .from('riders')
+    .select('*')
+
+  if (error) {
+    console.error('Error fetching riders:', error)
+    return []
+  }
+
+  return data
 };
 
 export const createRider = async (rider) => {
-  const postOptions = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(rider),
-  };
-  return fetch("http://localhost:8088/riders", postOptions).then((res) =>
-    res.json(),
-  );
+  const { data, error } = await supabase
+    .from('riders')
+    .insert([rider])
+    .select()
+
+  if (error) {
+    console.error('Error creating riders:', error)
+    return null
+  }
+
+  return data[0]
 };
 
 export const createRiderShift = async (riderShift) => {
-  const postOptions = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(riderShift)
+  const { data, error } = await supabase
+    .from('riderShifts')
+    .insert([riderShift])
+    .select()
+
+  if (error) {
+    console.error('Error creating rider shifts:', error)
+    return null
   }
-  return fetch("http://localhost:8088/riderShifts", postOptions)
+
+  return data[0]
 }
 
-export const deleteRiderShift = (id) => {
-  return fetch(`http://localhost:8088/riderShifts/${id}`, {
-    method: "DELETE",
-  });
+export const deleteRiderShift = async (id) => {
+  const { error } = await supabase
+    .from('riderShifts')
+    .delete()
+    .eq('id', id)
+
+  if (error) {
+    console.error('Error deleting rider shift:', error)
+    return null
+  }
 }; 

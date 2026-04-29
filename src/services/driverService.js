@@ -1,36 +1,71 @@
-export const getAllDrivers = () => {
-  return fetch("http://localhost:8088/drivers").then((res) => res.json());
+import { supabase } from "../supabaseClient";
+
+export const getAllDrivers = async () => {
+  const { data, error } = await supabase
+    .from('drivers')
+    .select('*')
+
+  if (error) {
+    console.error('Error fetching drivers:', error)
+    return []
+  }
+
+  return data
 };
 
-export const getDriverById = () => {
-  return fetch(`http://localhost:8088/drivers/${id}`).then((res) => res.json());
+export const getDriverById = async (id) => {
+  const { data, error } = await supabase
+    .from('drivers')
+    .select('*')
+    .eq('id', id)
+
+  if (error) {
+    console.error('Error fetching driver by id:', error)
+    return []
+  }
+
+  return data
 };
 
-export const getDriverByEmail = (email) => {
-  return fetch(`http://localhost:8088/drivers?email=${email}`).then((res) =>
-    res.json(),
-  );
+export const getDriverByEmail = async (email) => {
+  const { data, error } = await supabase
+    .from('drivers')
+    .select('*')
+    .eq('email', email)
+
+  if (error) {
+    console.error('Error fetching driver by email:', error)
+    return []
+  }
+
+  return data
 };
 
-export const updateDriver = (driver) => {
-  return fetch(`http://localhost:8088/drivers/${driver.id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(driver),
-  }).then((res) => res.json());
+export const updateDriver = async (driver) => {
+  const { data, error } = await supabase
+    .from('drivers')
+    .update(driver)
+    .eq('id', driver.id)
+    .select()
+
+  if (error) {
+    console.error('Error updating driver:', error)
+    return null
+  }
+
+  return data[0]
 };
 
 export const createDriver = async (driver) => {
-  const postOptions = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(driver),
-  };
-  return fetch("http://localhost:8088/drivers", postOptions).then((res) =>
-    res.json(),
-  );
+  const { data, error } = await supabase
+    .from('drivers')
+    .insert([driver])
+    .select()
+
+  if (error) {
+    console.error('Error creating driver:', error)
+    return null
+  }
+
+  return data[0]
 };
