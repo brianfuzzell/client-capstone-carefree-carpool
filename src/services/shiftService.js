@@ -16,7 +16,7 @@ export const getAllShifts = async () => {
 export const getShiftsByDriverAndRiderShifts = async () => {
   const { data, error } = await supabase
     .from('shifts')
-    .select('*, drivers(*), riderShifts(*)')
+    .select('*, driver:drivers(*), riderShifts(*)')
 
   if (error) {
     console.error('Error fetching shifts by driver and rider shifts:', error)

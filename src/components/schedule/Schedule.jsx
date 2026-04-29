@@ -32,7 +32,6 @@ export const Schedule = ({ currentDriver }) => {
       });
 
       setShiftsWithDetails(groupedShifts);
-      console.log("Grouped shifts", groupedShifts);
     });
   }, []);
 

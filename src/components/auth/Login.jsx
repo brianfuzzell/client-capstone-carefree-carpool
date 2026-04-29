@@ -7,7 +7,7 @@ import Form from "react-bootstrap/Form";
 import { getDriverByEmail } from "../../services/driverService";
 
 export const Login = () => {
-  const [email, set] = useState("carefree.carpool@carpool.app");
+  const [email, set] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
