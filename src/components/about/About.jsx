@@ -6,7 +6,7 @@ export const About = () => {
       <h2>About</h2>
       <Container className="about-container">
         <div>
-          Thank you for reviewing my client-side React capstone project - one of
+          Hi, I'm Brian Fuzzell. Thanks for reviewing my client-side React capstone project - one of
           the biggest projects required during my full-time full stack course
           work at{" "}
           <a href="https://nashvillesoftwareschool.com/" target="_blank">
